@@ -39,7 +39,7 @@ def main():
         print('started')
 
         ws = websocket.WebSocket()
-        ws.connect('ws://127.0.0.1:8000/ws/_consumers_xcv/')
+        ws.connect('ws://31.220.76.252:8000/ws/_consumers_xcv/')
 
         Dictionary ={'s': 'AUDUSDT', 'tvc': round(0.9204210570055297,5), 'c': 1, 't': '02/08/2023  21:23', 'v': 12435164.0, 'lp': 0.6961, 'tpc': round(0.08612028132624285,5), 'rpc': round(-0.08612028132624285,5)}                          
 
