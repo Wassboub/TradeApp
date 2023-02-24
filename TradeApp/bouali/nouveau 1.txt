@@ -1,0 +1,5 @@
+D:\Perso\Work\Freelance\Django\RealTime3(good one)\bouali
+python binancePump.py
+
+
+continuer le visuel front end -> la base de donnes ajout d une table  -> step(2)

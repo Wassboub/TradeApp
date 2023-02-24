@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+  
+{% block title %}TradeApp-History{% endblock %}
+  
+{% block content %}
+<h2 class='home_t'> History<h2>
+     <div
+	class="chat__item__container"
+	id="id_chat_item_container"
+	style="font-size: 20px"
+	>
+  <div class="text-center table_main table-wrapper-scroll-y my-custom-scrollbar">
+   <table >
+        <thead>
+            <tr class="">
+                <th>Symbol</th>
+                <th>Time</th>
+                <th>Ticks</th>
+                <th>RPCh</th>
+                <th>TPCh</th>
+                <th>VCh</th>
+                <th>LP</th>
+                <th>LV</th>
+
+            </tr>
+        </thead>
+        <tbody id="coinsTable2">
+        {% for coin in coinsInfo %}
+          <tr>
+            <td class="Symbol">{{coin.symbol}}
+            <div class="glow"></div>
+            <div class="flame"></div>
+
+            
+            </td>
+            <td class="">{{coin.Time|date:"SHORT_DATE_FORMAT"}}  {{coin.Time|time:"H:i"}}</td>
+            <td >{{coin.Ticks}}</td>
+            {%if coin.RelativePriceChange < 0 %}
+                <td style="color:#DC3545;">{{coin.RelativePriceChange}}</td>
+            {%else%}
+                <td style="color:#198754;">{{coin.RelativePriceChange}}</td>
+            {%endif%}
+            <td>{{coin.TotalPriceChange}}</td>
+            <td>{{coin.VolumeChange}}</td>
+            <td>{{coin.LastPrice}}</td>
+            <td>{{coin.LastVolume}}</td>
+          </tr>
+        {%endfor%}
+        </tbody>
+    </table>
+
+
+
+	<br />
+  </div>
+	</div>
+
+      <script>
+      const chatSocket = new WebSocket("ws://" + window.location.host + "/ws/consumers2_kfb/");
+      
+      chatSocket.onopen = function (e) {
+        console.log("The connection was setup successfully !");
+      };
+      chatSocket.onclose = function (e) {
+        console.log("Something unexpected happened !");
+      };
+     
+      chatSocket.onmessage = function (e) {
+        const data = JSON.parse(e.data);
+        var table = document.getElementById("coinsTable2");
+        var tr = document.createElement("tr");
+        var td0 = document.createElement("td");
+        td0.appendChild(document.createTextNode(data.message.s));
+        td0.setAttribute("class", "Symbol");
+        var td1 = document.createElement("td");
+        td1.appendChild(document.createTextNode(data.message.t));
+        var td2 = document.createElement("td");
+        td2.appendChild(document.createTextNode(data.message.c));
+        td2.setAttribute("class", "");
+        var td3 = document.createElement("td");
+        td3.appendChild(document.createTextNode(data.message.rpc));
+        td3.setAttribute("class", "");
+        var td4 = document.createElement("td");
+        td4.appendChild(document.createTextNode(data.message.tpc));
+        td4.setAttribute("class", "");
+        var td5 = document.createElement("td");
+        td5.appendChild(document.createTextNode(data.message.tvc));
+        td5.setAttribute("class", "");
+        var td6 = document.createElement("td");
+        td6.appendChild(document.createTextNode(data.message.lp));
+        td6.setAttribute("class", "");
+        var td7 = document.createElement("td");
+        td7.appendChild(document.createTextNode(data.message.v));
+        td7.setAttribute("class", "");
+
+        var row = table.insertRow(0);
+
+        if(data.message.rpc < 0){
+            td3.style.color = "#DC3545";
+        } else {
+            td3.style.color = "#198754";
+        }
+
+        row.style.backgroundColor  = "#383838";
+
+        row.onmouseover = function() {mouseOver(row)};
+
+        function mouseOver(element) {
+          element.style.backgroundColor  = "#1f1f1f"; 
+        }
+
+
+                row.appendChild(td0);
+                row.appendChild(td1);
+                row.appendChild(td2);
+                row.appendChild(td3);
+                row.appendChild(td4);
+                row.appendChild(td5);
+                row.appendChild(td6);
+                row.appendChild(td7);
+                //table.appendChild(tr);
+
+
+      };
+    </script>
+{% endblock %}
+
+
+

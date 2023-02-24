@@ -1,0 +1,14 @@
+confirm th auto save from cmd.......................done
+redirect from login to views home...................done
+style frontend of the home with top nav bar.........done
+best of style of home...............................done
+hover change in notification........................done
+new row in the top..................................done
+regler problem du time..............................done
+regler problem des virgule..........................done
+
+
+Notes:
+1-concernant l'acces unique a la session c'est pas tres recomander car il peuvent echanger leurs donnees et connecter a des temps differents.
+2-concenrnant la requete il faut preciser le nombre de ligner a rammener get(12) pour les trois templates.
+3-change le nom dans le json like username*******

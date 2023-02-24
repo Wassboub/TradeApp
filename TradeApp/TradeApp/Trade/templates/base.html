@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>{% block title %}Django Mysql User Authentication - Login, register and Logout {{request.user}}{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"/>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+ <nav class="navbar navbar-expand-lg " style="background-color: #1f1f1f;">
+        <div class="container-fluid">
+            <div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link">TradeApp</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home_1_scalp">Scalp</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home_2_swing">Swing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home_3_btc">BTC alerts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home_4_history">History</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <ul class="navbar-nav">
+                    {% if  user.is_superuser %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/signup">signup</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/auth/user/">users</a>
+                    </li>
+                    {% endif %}
+                    {% if  user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" >Logged in as {{user.username}} |</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/signout">Logout</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        {%block content %}
+        {%endblock%}
+    </div>
+</html>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+html {
+    font-size: 12px;
+
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+.navbar-nav li a {
+    color: #FFFF99;
+        font-size: 16px;
+
+}
+
+.navbar-nav li button {
+    color: #FFFF99;
+            font-size: 16px;
+
+}
+
+
+body {
+    background-color: #121212;
+    margin-bottom: 60px;
+    width: 100vw;
+    height: 100vw;
+    font-family: poppins, sans-serif;
+    font-size: 0.98rem;
+    overflow: hidden;  /*Hide scrollbars */
+}
+
+
+
+.table_main {
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-y: auto; /* make the table scrollable if height is more than 200 px  */
+    height: 500px; /* gives an initial height of 200px to the table */
+    border-radius: 2rem;
+}
+
+    .table_main h2 {
+        margin-bottom: 0.8rem;
+        color: #ffd700;
+    }
+
+    .table_main table {
+        background: #1f1f1f;
+        box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.14);
+        width: 100%;
+        border-radius: 2rem;
+        padding: 1.8rem;
+        text-align: center;
+        transition: all 300ms ease;
+    }
+
+        .table_main table:hover {
+            box-shadow: none;
+        }
+
+        .table_main table thead th {
+            background: #1f1f1f;
+            position: sticky; /* make the table heads sticky */
+            top: 0px; /* table head will be placed from the top of the table and sticks to it */
+            height: 2.8rem;
+            border-bottom: 1px solid rgba(132,139,200,0.18);
+            color: #DAA520;
+            border-radius: 2rem;
+        }
+
+    tbody  {  
+            
+           height:50px;
+         overflow-y:auto;
+            
+        }
+        .table_main table tbody td {
+            height: 2.8rem;
+            border-bottom: 1px solid rgba(132,139,200,0.18);
+            color: #fff;
+            
+        }
+
+        .table_main table tbody tr:last-child td{
+            border: none;
+        }
+
+.home_t{
+    margin-top: 20px;
+    color: #FFFF99;
+}
+
+
+.Symbol {
+    width: 20%;
+}
+.PriceChange {
+    width: 20%;
+}
+.PriceChangePercent {
+    width: 20%;
+}
+.OpenPrice {
+    width: 20%;
+}
+.Volume {
+    width: 20%;
+}
+
+.my-custom-scrollbar::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+.my-custom-scrollbar::-webkit-scrollbar
+{
+  width: 12px;
+    border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+.my-custom-scrollbar::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #555;
+}
+
+</style>
