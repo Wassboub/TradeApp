@@ -25,9 +25,9 @@ SECRET_KEY = 'django-insecure-khs9#518*s20bd26937gbj9j@c^8uf%z++7!w$eh=_yovk*1m(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-#ALLOWED_HOSTS = ['192.168.1.25']
+ALLOWED_HOSTS = ['31.220.76.252']
 
-ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -88,9 +88,9 @@ CHANNEL_LAYERS = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME' : 'trade',
-        'USER' : 'postgres',
-        'PASSWORD' : 'azerty',
+        'NAME' : 'tradedb',
+        'USER' : 'qwerty',
+        'PASSWORD' : 'qwerty',
         'HOST': 'localhost',
         'PORT': '5432'
     }
