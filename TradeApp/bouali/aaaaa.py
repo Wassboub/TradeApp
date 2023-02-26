@@ -41,12 +41,12 @@ def main():
         ws = websocket.WebSocket()
         ws.connect('ws://31.220.76.252:8000/ws/_consumers_xcv/')
 
-        Dictionary ={'s': 'AUDUSDT', 'tvc': round(0.9204210570055297,5), 'c': 1, 't': '02/08/2023  21:23', 'v': 12435164.0, 'lp': 0.6961, 'tpc': round(0.08612028132624285,5), 'rpc': round(-0.08612028132624285,5)}                          
+        Dictionary ={'s': 'AUDUSDT', 'tvc': round(0.9204210570055297,5), 'c': 1, 't': '02/08/2023  23:23', 'v': 12435164.0, 'lp': 0.6961, 'tpc': round(0.08612028132624285,5), 'rpc': round(-0.08612028132624285,5)}                          
 
         for i in range(40):
             print("i a pour valeur", i)        
             ws.send(json.dumps({'message' : Dictionary ,  'username' : 'binance' }))
-            time.sleep(5)
+            time.sleep(1200)
 
        
     

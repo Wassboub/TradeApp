@@ -88,9 +88,9 @@ CHANNEL_LAYERS = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME' : 'tradedb',
-        'USER' : 'qwerty',
-        'PASSWORD' : 'qwerty',
+        'NAME' : 'trade',
+        'USER' : 'wass',
+        'PASSWORD' : 'wass',
         'HOST': 'localhost',
         'PORT': '5432'
     }

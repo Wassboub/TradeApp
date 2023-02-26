@@ -76,7 +76,7 @@ def main():
         # print("Currentb Price Of {} is {}".format(msg[0]['s'], msg[0]['c']))
 
         ws = websocket.WebSocket()
-        ws.connect('ws://127.0.0.1:8000/')
+        ws.connect('ws://31.220.76.252:8000/ws/_consumers_xcv/')
 
 
 
@@ -172,7 +172,7 @@ def main():
                                 send_to_all_chat_ids(msg)
                                 header_printed = True
                             print(max_price_group.to_string(True))
-                            Dictionary ={'s':max_price_group.symbol,'tvc':round(max_price_group.total_volume_change,5), 'c':max_price_group.tick_count,'t':max_price_group.last_event_time.strftime("%m/%d/%Y  %H:%M"), 'v':max_price_group.volume,'lp':round(max_price_group.last_price,5),'tpc':round(max_price_group.total_price_change,5), 'rpc':round(max_price_group.relative_price_change,5)}                          
+                            Dictionary ={'s':max_price_group.symbol,'tvc':round(max_price_group.total_volume_change,5), 'c':max_price_group.tick_count,'t':max_price_group.last_event_time.strftime("%d/%m/%Y  %H:%M"), 'v':max_price_group.volume,'lp':round(max_price_group.last_price,5),'tpc':round(max_price_group.total_price_change,5), 'rpc':round(max_price_group.relative_price_change,5)}                          
                             ws.send(json.dumps({'message' : Dictionary ,  'username' : 'binance' }))
                             send_to_all_chat_ids(
                                 max_price_group.to_string(False))
@@ -197,7 +197,7 @@ def main():
                                 send_to_all_chat_ids(msg)
                                 header_printed = True
                             print(max_price_group.to_string(True))
-                            Dictionary ={'s':max_price_group.symbol,'tvc':round(max_price_group.total_volume_change,5), 'c':max_price_group.tick_count,'t':max_price_group.last_event_time.strftime("%m/%d/%Y  %H:%M"), 'v':max_price_group.volume,'lp':round(max_price_group.last_price,5),'tpc':round(max_price_group.total_price_change,5), 'rpc':round(max_price_group.relative_price_change,5)}                          
+                            Dictionary ={'s':max_price_group.symbol,'tvc':round(max_price_group.total_volume_change,5), 'c':max_price_group.tick_count,'t':max_price_group.last_event_time.strftime("%d/%m/%Y  %H:%M"), 'v':max_price_group.volume,'lp':round(max_price_group.last_price,5),'tpc':round(max_price_group.total_price_change,5), 'rpc':round(max_price_group.relative_price_change,5)}                          
                             ws.send(json.dumps({'message' : Dictionary ,  'username' : 'binance' }))
                             send_to_all_chat_ids(
                                 max_price_group.to_string(False))
@@ -219,7 +219,7 @@ def main():
                                 send_to_all_chat_ids(msg)
                                 header_printed = True
                             print(max_price_group.to_string(True))
-                            Dictionary ={'s':max_price_group.symbol,'tvc':round(max_price_group.total_volume_change,5), 'c':max_price_group.tick_count,'t':max_price_group.last_event_time.strftime("%m/%d/%Y  %H:%M"), 'v':max_price_group.volume,'lp':round(max_price_group.last_price,5),'tpc':round(max_price_group.total_price_change,5), 'rpc':round(max_price_group.relative_price_change,5)}                          
+                            Dictionary ={'s':max_price_group.symbol,'tvc':round(max_price_group.total_volume_change,5), 'c':max_price_group.tick_count,'t':max_price_group.last_event_time.strftime("%d/%m/%Y  %H:%M"), 'v':max_price_group.volume,'lp':round(max_price_group.last_price,5),'tpc':round(max_price_group.total_price_change,5), 'rpc':round(max_price_group.relative_price_change,5)}                          
                             ws.send(json.dumps({'message' : Dictionary ,  'username' : 'binance' }))
                             send_to_all_chat_ids(
                                 max_price_group.to_string(False))
@@ -242,7 +242,7 @@ def main():
                                 send_to_all_chat_ids(msg)
                                 header_printed = True
                             print(max_price_group.to_string(True))
-                            Dictionary ={'s':max_price_group.symbol,'tvc':round(max_price_group.total_volume_change,5), 'c':max_price_group.tick_count,'t':max_price_group.last_event_time.strftime("%m/%d/%Y  %H:%M"), 'v':max_price_group.volume,'lp':round(max_price_group.last_price,5),'tpc':round(max_price_group.total_price_change,5), 'rpc':round(max_price_group.relative_price_change,5)}                          
+                            Dictionary ={'s':max_price_group.symbol,'tvc':round(max_price_group.total_volume_change,5), 'c':max_price_group.tick_count,'t':max_price_group.last_event_time.strftime("%d/%m/%Y  %H:%M"), 'v':max_price_group.volume,'lp':round(max_price_group.last_price,5),'tpc':round(max_price_group.total_price_change,5), 'rpc':round(max_price_group.relative_price_change,5)}                          
                             ws.send(json.dumps({'message' : Dictionary ,  'username' : 'binance' }))
                             send_to_all_chat_ids(
                                 max_price_group.to_string(False))

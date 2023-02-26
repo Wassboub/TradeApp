@@ -31,7 +31,6 @@ def home_1_scalp(request):
 @login_required(login_url="/signin")
 def home_2_swing(request): 
     coinsInfos = CoinInfo_2.objects.all().order_by('-Time')
-    print(coinsInfos[0].Time)
     return render(request, 'home_2_swing.html', {"coinsInfo" : coinsInfos})
    
 @login_required(login_url="/signin")
