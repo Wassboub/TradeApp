@@ -33,7 +33,7 @@
 
             
             </td>
-            <td class="">{{coin.Time|date:"SHORT_DATE_FORMAT"}}  {{coin.Time|time:"H:i"}}</td>
+            <td class="">{{coin.Time|date:"d/m/Y"}}  {{coin.Time|time:"H:i"}}</td>
             <td >{{coin.Ticks}}</td>
             {%if coin.RelativePriceChange < 0 %}
                 <td style="color:#DC3545;">{{coin.RelativePriceChange}}</td>
