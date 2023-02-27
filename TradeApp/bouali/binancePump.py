@@ -169,7 +169,7 @@ def main():
                                 msg = "Top Ticks"
                                 print(msg)
 
-                                ~#send_to_all_chat_ids(msg)
+                                #send_to_all_chat_ids(msg)
                                 header_printed = True
                             print(max_price_group.to_string(True))
                             Dictionary ={'s':max_price_group.symbol,'tvc':round(max_price_group.total_volume_change,5), 'c':max_price_group.tick_count,'t':max_price_group.last_event_time.strftime("%d/%m/%Y  %H:%M"), 'v':max_price_group.volume,'lp':round(max_price_group.last_price,5),'tpc':round(max_price_group.total_price_change,5), 'rpc':round(max_price_group.relative_price_change,5)}                          
