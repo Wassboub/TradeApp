@@ -323,3 +323,267 @@ Symbol:MULTIUSDT	 Time:2023-02-26 11:08:33.434000	 Ticks:[27]	 RPCh:0.50	 TPCh:2
 Top Ticks
 Symbol:MULTIUSDT	 Time:2023-02-26 11:09:03.442000	 Ticks:[28]	 RPCh:0.42	 TPCh:2.48	 VCh:35.65	 LP:12.66	 LV:61214.445	
 
+Unhandled Error
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/twisted/python/log.py", line 96, in callWithLogger
+    return callWithContext({"system": lp}, func, *args, **kw)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/python/log.py", line 80, in callWithContext
+    return context.call({ILogContext: newCtx}, func, *args, **kw)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/python/context.py", line 117, in callWithContext
+    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/python/context.py", line 82, in callWithContext
+    return func(*args, **kw)
+--- <exception caught here> ---
+  File "/usr/local/lib/python3.8/dist-packages/twisted/internet/posixbase.py", line 487, in _doReadOrWrite
+    why = selectable.doRead()
+  File "/usr/local/lib/python3.8/dist-packages/twisted/internet/tcp.py", line 248, in doRead
+    return self._dataReceived(data)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/internet/tcp.py", line 253, in _dataReceived
+    rval = self.protocol.dataReceived(data)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/protocols/tls.py", line 329, in dataReceived
+    self._flushReceiveBIO()
+  File "/usr/local/lib/python3.8/dist-packages/twisted/protocols/tls.py", line 295, in _flushReceiveBIO
+    ProtocolWrapper.dataReceived(self, bytes)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/protocols/policies.py", line 110, in dataReceived
+    self.wrappedProtocol.dataReceived(data)
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/twisted/websocket.py", line 348, in dataReceived
+    self._dataReceived(data)
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 1243, in _dataReceived
+    self.consumeData()
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 1255, in consumeData
+    while self.processData() and self.state != WebSocketProtocol.STATE_CLOSED:
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 1619, in processData
+    fr = self.onFrameEnd()
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 1747, in onFrameEnd
+    self._onMessageEnd()
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/twisted/websocket.py", line 384, in _onMessageEnd
+    self.onMessageEnd()
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 647, in onMessageEnd
+    self._onMessage(payload, self.message_is_binary)
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/twisted/websocket.py", line 387, in _onMessage
+    self.onMessage(payload, isBinary)
+  File "/usr/local/lib/python3.8/dist-packages/binance/websockets.py", line 31, in onMessage
+    self.factory.callback(payload_obj)
+  File "binancePump.py", line 79, in process_message
+    ws.connect('ws://31.220.76.252:8000/ws/_consumers_xcv/')
+  File "/usr/local/lib/python3.8/dist-packages/websocket/_core.py", line 249, in connect
+    self.sock, addrs = connect(url, self.sock_opt, proxy_info(**options),
+  File "/usr/local/lib/python3.8/dist-packages/websocket/_http.py", line 130, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "/usr/local/lib/python3.8/dist-packages/websocket/_http.py", line 205, in _open_socket
+    raise err
+  File "/usr/local/lib/python3.8/dist-packages/websocket/_http.py", line 185, in _open_socket
+    sock.connect(address)
+builtins.ConnectionRefusedError: [Errno 111] Connection refused
+
+Unhandled Error
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/twisted/python/log.py", line 96, in callWithLogger
+    return callWithContext({"system": lp}, func, *args, **kw)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/python/log.py", line 80, in callWithContext
+    return context.call({ILogContext: newCtx}, func, *args, **kw)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/python/context.py", line 117, in callWithContext
+    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/python/context.py", line 82, in callWithContext
+    return func(*args, **kw)
+--- <exception caught here> ---
+  File "/usr/local/lib/python3.8/dist-packages/twisted/internet/posixbase.py", line 487, in _doReadOrWrite
+    why = selectable.doRead()
+  File "/usr/local/lib/python3.8/dist-packages/twisted/internet/tcp.py", line 248, in doRead
+    return self._dataReceived(data)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/internet/tcp.py", line 253, in _dataReceived
+    rval = self.protocol.dataReceived(data)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/protocols/tls.py", line 329, in dataReceived
+    self._flushReceiveBIO()
+  File "/usr/local/lib/python3.8/dist-packages/twisted/protocols/tls.py", line 295, in _flushReceiveBIO
+    ProtocolWrapper.dataReceived(self, bytes)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/protocols/policies.py", line 110, in dataReceived
+    self.wrappedProtocol.dataReceived(data)
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/twisted/websocket.py", line 348, in dataReceived
+    self._dataReceived(data)
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 1243, in _dataReceived
+    self.consumeData()
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 1255, in consumeData
+    while self.processData() and self.state != WebSocketProtocol.STATE_CLOSED:
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 1619, in processData
+    fr = self.onFrameEnd()
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 1747, in onFrameEnd
+    self._onMessageEnd()
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/twisted/websocket.py", line 384, in _onMessageEnd
+    self.onMessageEnd()
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 647, in onMessageEnd
+    self._onMessage(payload, self.message_is_binary)
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/twisted/websocket.py", line 387, in _onMessage
+    self.onMessage(payload, isBinary)
+  File "/usr/local/lib/python3.8/dist-packages/binance/websockets.py", line 31, in onMessage
+    self.factory.callback(payload_obj)
+  File "binancePump.py", line 79, in process_message
+    ws.connect('ws://31.220.76.252:8000/ws/_consumers_xcv/')
+  File "/usr/local/lib/python3.8/dist-packages/websocket/_core.py", line 249, in connect
+    self.sock, addrs = connect(url, self.sock_opt, proxy_info(**options),
+  File "/usr/local/lib/python3.8/dist-packages/websocket/_http.py", line 130, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "/usr/local/lib/python3.8/dist-packages/websocket/_http.py", line 205, in _open_socket
+    raise err
+  File "/usr/local/lib/python3.8/dist-packages/websocket/_http.py", line 185, in _open_socket
+    sock.connect(address)
+builtins.ConnectionRefusedError: [Errno 111] Connection refused
+
+Unhandled Error
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/twisted/python/log.py", line 96, in callWithLogger
+    return callWithContext({"system": lp}, func, *args, **kw)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/python/log.py", line 80, in callWithContext
+    return context.call({ILogContext: newCtx}, func, *args, **kw)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/python/context.py", line 117, in callWithContext
+    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/python/context.py", line 82, in callWithContext
+    return func(*args, **kw)
+--- <exception caught here> ---
+  File "/usr/local/lib/python3.8/dist-packages/twisted/internet/posixbase.py", line 487, in _doReadOrWrite
+    why = selectable.doRead()
+  File "/usr/local/lib/python3.8/dist-packages/twisted/internet/tcp.py", line 248, in doRead
+    return self._dataReceived(data)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/internet/tcp.py", line 253, in _dataReceived
+    rval = self.protocol.dataReceived(data)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/protocols/tls.py", line 329, in dataReceived
+    self._flushReceiveBIO()
+  File "/usr/local/lib/python3.8/dist-packages/twisted/protocols/tls.py", line 295, in _flushReceiveBIO
+    ProtocolWrapper.dataReceived(self, bytes)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/protocols/policies.py", line 110, in dataReceived
+    self.wrappedProtocol.dataReceived(data)
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/twisted/websocket.py", line 348, in dataReceived
+    self._dataReceived(data)
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 1243, in _dataReceived
+    self.consumeData()
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 1255, in consumeData
+    while self.processData() and self.state != WebSocketProtocol.STATE_CLOSED:
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 1619, in processData
+    fr = self.onFrameEnd()
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 1747, in onFrameEnd
+    self._onMessageEnd()
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/twisted/websocket.py", line 384, in _onMessageEnd
+    self.onMessageEnd()
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 647, in onMessageEnd
+    self._onMessage(payload, self.message_is_binary)
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/twisted/websocket.py", line 387, in _onMessage
+    self.onMessage(payload, isBinary)
+  File "/usr/local/lib/python3.8/dist-packages/binance/websockets.py", line 31, in onMessage
+    self.factory.callback(payload_obj)
+  File "binancePump.py", line 79, in process_message
+    ws.connect('ws://31.220.76.252:8000/ws/_consumers_xcv/')
+  File "/usr/local/lib/python3.8/dist-packages/websocket/_core.py", line 249, in connect
+    self.sock, addrs = connect(url, self.sock_opt, proxy_info(**options),
+  File "/usr/local/lib/python3.8/dist-packages/websocket/_http.py", line 130, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "/usr/local/lib/python3.8/dist-packages/websocket/_http.py", line 205, in _open_socket
+    raise err
+  File "/usr/local/lib/python3.8/dist-packages/websocket/_http.py", line 185, in _open_socket
+    sock.connect(address)
+builtins.ConnectionRefusedError: [Errno 111] Connection refused
+
+2023-02-27 08:03:08,910 (__init__.py:1083 MainThread) ERROR - TeleBot: "Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2023-02-27 08:03:08,950 (__init__.py:1085 MainThread) ERROR - TeleBot: "Exception traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/telebot/__init__.py", line 1073, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "/usr/local/lib/python3.8/dist-packages/telebot/util.py", line 109, in raise_exceptions
+    raise self.exception_info
+  File "/usr/local/lib/python3.8/dist-packages/telebot/util.py", line 91, in run
+    task(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/telebot/__init__.py", line 649, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+  File "/usr/local/lib/python3.8/dist-packages/telebot/__init__.py", line 623, in get_updates
+    json_updates = apihelper.get_updates(self.token, offset, limit, timeout, allowed_updates, long_polling_timeout)
+  File "/usr/local/lib/python3.8/dist-packages/telebot/apihelper.py", line 321, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "/usr/local/lib/python3.8/dist-packages/telebot/apihelper.py", line 162, in _make_request
+    json_result = _check_result(method_name, result)
+  File "/usr/local/lib/python3.8/dist-packages/telebot/apihelper.py", line 189, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+"
+bm socket started
+Top Ticks
+Symbol:ZRXUSDT	 Time:2023-02-27 00:35:47.006000	 Ticks:[1]	 RPCh:0.07	 TPCh:0.07	 VCh:0.94	 LP:0.2695	 LV:6830364.0	
+
+Top Ticks
+Symbol:CHZUSDT	 Time:2023-02-27 00:36:24.013000	 Ticks:[1]	 RPCh:0.07	 TPCh:0.07	 VCh:1.28	 LP:0.1359	 LV:44110065.0	
+
+Top Ticks
+Symbol:LUNAUSDT	 Time:2023-02-27 00:42:01.087000	 Ticks:[1]	 RPCh:0.06	 TPCh:0.06	 VCh:1.35	 LP:1.7367	 LV:1619412.08	
+
+Top Ticks
+Symbol:QTUMUSDT	 Time:2023-02-27 00:43:00.095000	 Ticks:[1]	 RPCh:0.06	 TPCh:0.06	 VCh:0.98	 LP:3.423	 LV:985750.8	
+
+Top Ticks
+Symbol:ENSUSDT	 Time:2023-02-27 00:44:44.115000	 Ticks:[1]	 RPCh:0.06	 TPCh:0.06	 VCh:0.78	 LP:16.41	 LV:418209.31	
+
+Top Ticks
+Symbol:ASRUSDT	 Time:2023-02-27 00:47:05.135000	 Ticks:[1]	 RPCh:0.07	 TPCh:0.07	 VCh:0.91	 LP:2.886	 LV:174021.2	
+
+Top Ticks
+Symbol:SUPERUSDT	 Time:2023-02-27 00:47:49.105000	 Ticks:[1]	 RPCh:-0.06	 TPCh:0.06	 VCh:0.51	 LP:0.1562	 LV:3975366.0	
+
+Top Ticks
+Symbol:SUPERUSDT	 Time:2023-02-27 00:48:57.161000	 Ticks:[2]	 RPCh:-0.13	 TPCh:0.13	 VCh:1.18	 LP:0.1558	 LV:4010897.0	
+
+Top Total Volume Change
+Symbol:USDTNGN	 Time:2023-02-27 01:00:07.634000	 Ticks:[1]	 RPCh:0.09	 TPCh:0.09	 VCh:1.92	 LP:751.6	 LV:191279.7	
+
+Top Ticks
+Symbol:IOSTUSDT	 Time:2023-02-27 01:00:35.321000	 Ticks:[2]	 RPCh:-0.00	 TPCh:0.17	 VCh:1.63	 LP:0.01167	 LV:205914678.0	
+
+Top Ticks
+Symbol:IOSTUSDT	 Time:2023-02-27 01:01:06.341000	 Ticks:[3]	 RPCh:0.08	 TPCh:0.26	 VCh:2.64	 LP:0.0118	 LV:226004366.0	
+
+Top Ticks
+Symbol:IOSTUSDT	 Time:2023-02-27 01:01:20.350000	 Ticks:[4]	 RPCh:0.17	 TPCh:0.34	 VCh:3.19	 LP:0.01178	 LV:228706504.0	
+
+Top Ticks
+Symbol:IOSTUSDT	 Time:2023-02-27 01:01:39.354000	 Ticks:[5]	 RPCh:0.08	 TPCh:0.43	 VCh:4.70	 LP:0.01175	 LV:233625370.0	
+
+Top Relative Price Change
+Symbol:LUNAUSDT	 Time:2023-02-27 02:18:06.255000	 Ticks:[2]	 RPCh:0.13	 TPCh:0.13	 VCh:2.02	 LP:1.7291	 LV:1634236.05	
+
+Top Relative Price Change
+Symbol:PLAUSDT	 Time:2023-02-27 02:22:16.302000	 Ticks:[2]	 RPCh:0.15	 TPCh:0.15	 VCh:2.60	 LP:0.2608	 LV:922453.14	
+
+Top Relative Price Change
+Symbol:QIUSDT	 Time:2023-02-27 03:00:42.830000	 Ticks:[2]	 RPCh:-0.18	 TPCh:0.18	 VCh:1.43	 LP:0.01105	 LV:140426669.0	
+
+Top Relative Price Change
+Symbol:GTCUSDT	 Time:2023-02-27 04:02:12.985000	 Ticks:[2]	 RPCh:0.19	 TPCh:0.19	 VCh:1.50	 LP:2.101	 LV:1079334.9	
+
+Top Relative Price Change
+Symbol:LRCUSDT	 Time:2023-02-27 04:21:17.356000	 Ticks:[3]	 RPCh:0.22	 TPCh:0.22	 VCh:2.16	 LP:0.3728	 LV:15502515.0	
+
+Top Ticks
+Symbol:PLAUSDT	 Time:2023-02-27 05:15:21.030000	 Ticks:[5]	 RPCh:-0.07	 TPCh:0.38	 VCh:5.32	 LP:0.2618	 LV:1001805.73	
+
+Top Ticks
+Symbol:IOSTUSDT	 Time:2023-02-27 06:29:22.115000	 Ticks:[6]	 RPCh:-0.00	 TPCh:0.51	 VCh:6.33	 LP:0.0114	 LV:264271141.0	
+
+Top Relative Price Change
+Symbol:HIFIUSDT	 Time:2023-02-27 06:31:19.142000	 Ticks:[4]	 RPCh:-0.26	 TPCh:0.26	 VCh:2.74	 LP:0.5011	 LV:968093.0	
+
+Top Relative Price Change
+Symbol:ARDRUSDT	 Time:2023-02-27 07:11:26.452000	 Ticks:[3]	 RPCh:0.29	 TPCh:0.29	 VCh:2.23	 LP:0.1042	 LV:1806369.0	
+
+Top Ticks
+Symbol:BADGERUSDT	 Time:2023-02-27 07:42:50.933000	 Ticks:[6]	 RPCh:-0.17	 TPCh:0.46	 VCh:5.04	 LP:3.501	 LV:537601.6	
+
+Top Ticks
+Symbol:BADGERUSDT	 Time:2023-02-27 07:46:14.011000	 Ticks:[7]	 RPCh:-0.12	 TPCh:0.52	 VCh:5.54	 LP:3.55	 LV:608889.79	
+
+Top Ticks
+Symbol:BADGERUSDT	 Time:2023-02-27 07:46:24.974000	 Ticks:[8]	 RPCh:-0.03	 TPCh:0.60	 VCh:6.46	 LP:3.574	 LV:617585.47	
+
+Top Total Volume Change
+Symbol:USDTIDRT	 Time:2023-02-27 07:53:08.138000	 Ticks:[2]	 RPCh:0.17	 TPCh:0.17	 VCh:10.59	 LP:15310.0	 LV:107494.0	
+
+Top Total Volume Change
+Symbol:USDTIDRT	 Time:2023-02-27 07:58:53.498000	 Ticks:[3]	 RPCh:0.23	 TPCh:0.23	 VCh:12.54	 LP:15319.0	 LV:109524.0	
+
+tb socket started
+Press Enter to continue...
