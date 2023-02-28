@@ -586,4 +586,289 @@ Top Total Volume Change
 Symbol:USDTIDRT	 Time:2023-02-27 07:58:53.498000	 Ticks:[3]	 RPCh:0.23	 TPCh:0.23	 VCh:12.54	 LP:15319.0	 LV:109524.0	
 
 tb socket started
+Press Enter to continue...Unhandled Error
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/twisted/python/log.py", line 96, in callWithLogger
+    return callWithContext({"system": lp}, func, *args, **kw)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/python/log.py", line 80, in callWithContext
+    return context.call({ILogContext: newCtx}, func, *args, **kw)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/python/context.py", line 117, in callWithContext
+    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/python/context.py", line 82, in callWithContext
+    return func(*args, **kw)
+--- <exception caught here> ---
+  File "/usr/local/lib/python3.8/dist-packages/twisted/internet/posixbase.py", line 487, in _doReadOrWrite
+    why = selectable.doRead()
+  File "/usr/local/lib/python3.8/dist-packages/twisted/internet/tcp.py", line 248, in doRead
+    return self._dataReceived(data)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/internet/tcp.py", line 253, in _dataReceived
+    rval = self.protocol.dataReceived(data)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/protocols/tls.py", line 329, in dataReceived
+    self._flushReceiveBIO()
+  File "/usr/local/lib/python3.8/dist-packages/twisted/protocols/tls.py", line 295, in _flushReceiveBIO
+    ProtocolWrapper.dataReceived(self, bytes)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/protocols/policies.py", line 110, in dataReceived
+    self.wrappedProtocol.dataReceived(data)
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/twisted/websocket.py", line 348, in dataReceived
+    self._dataReceived(data)
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 1243, in _dataReceived
+    self.consumeData()
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 1255, in consumeData
+    while self.processData() and self.state != WebSocketProtocol.STATE_CLOSED:
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 1619, in processData
+    fr = self.onFrameEnd()
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 1747, in onFrameEnd
+    self._onMessageEnd()
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/twisted/websocket.py", line 384, in _onMessageEnd
+    self.onMessageEnd()
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 647, in onMessageEnd
+    self._onMessage(payload, self.message_is_binary)
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/twisted/websocket.py", line 387, in _onMessage
+    self.onMessage(payload, isBinary)
+  File "/usr/local/lib/python3.8/dist-packages/binance/websockets.py", line 31, in onMessage
+    self.factory.callback(payload_obj)
+  File "binancePump.py", line 79, in process_message
+    ws.connect('ws://31.220.76.252:8000/ws/_consumers_xcv/')
+  File "/usr/local/lib/python3.8/dist-packages/websocket/_core.py", line 249, in connect
+    self.sock, addrs = connect(url, self.sock_opt, proxy_info(**options),
+  File "/usr/local/lib/python3.8/dist-packages/websocket/_http.py", line 130, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "/usr/local/lib/python3.8/dist-packages/websocket/_http.py", line 205, in _open_socket
+    raise err
+  File "/usr/local/lib/python3.8/dist-packages/websocket/_http.py", line 185, in _open_socket
+    sock.connect(address)
+builtins.ConnectionRefusedError: [Errno 111] Connection refused
+
+Unhandled Error
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/twisted/python/log.py", line 96, in callWithLogger
+    return callWithContext({"system": lp}, func, *args, **kw)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/python/log.py", line 80, in callWithContext
+    return context.call({ILogContext: newCtx}, func, *args, **kw)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/python/context.py", line 117, in callWithContext
+    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/python/context.py", line 82, in callWithContext
+    return func(*args, **kw)
+--- <exception caught here> ---
+  File "/usr/local/lib/python3.8/dist-packages/twisted/internet/posixbase.py", line 487, in _doReadOrWrite
+    why = selectable.doRead()
+  File "/usr/local/lib/python3.8/dist-packages/twisted/internet/tcp.py", line 248, in doRead
+    return self._dataReceived(data)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/internet/tcp.py", line 253, in _dataReceived
+    rval = self.protocol.dataReceived(data)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/protocols/tls.py", line 329, in dataReceived
+    self._flushReceiveBIO()
+  File "/usr/local/lib/python3.8/dist-packages/twisted/protocols/tls.py", line 295, in _flushReceiveBIO
+    ProtocolWrapper.dataReceived(self, bytes)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/protocols/policies.py", line 110, in dataReceived
+    self.wrappedProtocol.dataReceived(data)
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/twisted/websocket.py", line 348, in dataReceived
+    self._dataReceived(data)
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 1243, in _dataReceived
+    self.consumeData()
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 1255, in consumeData
+    while self.processData() and self.state != WebSocketProtocol.STATE_CLOSED:
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 1619, in processData
+    fr = self.onFrameEnd()
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 1747, in onFrameEnd
+    self._onMessageEnd()
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/twisted/websocket.py", line 384, in _onMessageEnd
+    self.onMessageEnd()
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 647, in onMessageEnd
+    self._onMessage(payload, self.message_is_binary)
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/twisted/websocket.py", line 387, in _onMessage
+    self.onMessage(payload, isBinary)
+  File "/usr/local/lib/python3.8/dist-packages/binance/websockets.py", line 31, in onMessage
+    self.factory.callback(payload_obj)
+  File "binancePump.py", line 79, in process_message
+    ws.connect('ws://31.220.76.252:8000/ws/_consumers_xcv/')
+  File "/usr/local/lib/python3.8/dist-packages/websocket/_core.py", line 249, in connect
+    self.sock, addrs = connect(url, self.sock_opt, proxy_info(**options),
+  File "/usr/local/lib/python3.8/dist-packages/websocket/_http.py", line 130, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "/usr/local/lib/python3.8/dist-packages/websocket/_http.py", line 205, in _open_socket
+    raise err
+  File "/usr/local/lib/python3.8/dist-packages/websocket/_http.py", line 185, in _open_socket
+    sock.connect(address)
+builtins.ConnectionRefusedError: [Errno 111] Connection refused
+
+Unhandled Error
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/binance/websockets.py", line 734, in run
+    reactor.run(installSignalHandlers=False)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/internet/base.py", line 1318, in run
+    self.mainLoop()
+  File "/usr/local/lib/python3.8/dist-packages/twisted/internet/base.py", line 1331, in mainLoop
+    reactorBaseSelf.doIteration(t)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/internet/epollreactor.py", line 244, in doPoll
+    log.callWithLogger(selectable, _drdw, selectable, fd, event)
+--- <exception caught here> ---
+  File "/usr/local/lib/python3.8/dist-packages/twisted/python/log.py", line 96, in callWithLogger
+    return callWithContext({"system": lp}, func, *args, **kw)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/python/log.py", line 80, in callWithContext
+    return context.call({ILogContext: newCtx}, func, *args, **kw)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/python/context.py", line 117, in callWithContext
+    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/python/context.py", line 82, in callWithContext
+    return func(*args, **kw)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/internet/posixbase.py", line 500, in _doReadOrWrite
+    self._disconnectSelectable(selectable, why, inRead)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/internet/posixbase.py", line 107, in _disconnectSelectable
+    selectable.connectionLost(failure.Failure(why))
+  File "/usr/local/lib/python3.8/dist-packages/twisted/internet/tcp.py", line 508, in connectionLost
+    self._commonConnection.connectionLost(self, reason)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/internet/tcp.py", line 326, in connectionLost
+    protocol.connectionLost(reason)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/protocols/tls.py", line 394, in connectionLost
+    self._flushReceiveBIO()
+  File "/usr/local/lib/python3.8/dist-packages/twisted/protocols/tls.py", line 295, in _flushReceiveBIO
+    ProtocolWrapper.dataReceived(self, bytes)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/protocols/policies.py", line 110, in dataReceived
+    self.wrappedProtocol.dataReceived(data)
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/twisted/websocket.py", line 348, in dataReceived
+    self._dataReceived(data)
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 1243, in _dataReceived
+    self.consumeData()
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 1255, in consumeData
+    while self.processData() and self.state != WebSocketProtocol.STATE_CLOSED:
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 1611, in processData
+    fr = self.onFrameData(payload)
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 1706, in onFrameData
+    self._onMessageFrameData(payload)
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/twisted/websocket.py", line 375, in _onMessageFrameData
+    self.onMessageFrameData(payload)
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 621, in onMessageFrameData
+    self.frame_data.append(payload)
+builtins.AttributeError: 'NoneType' object has no attribute 'append'
+
+  File "binancePump.py", line 172
+    ~#send_to_all_chat_ids(msg)
+     ^
+SyntaxError: invalid syntax
+  File "binancePump.py", line 172
+    ~#send_to_all_chat_ids(msg)
+     ^
+SyntaxError: invalid syntax
+  File "binancePump.py", line 172
+    ~#send_to_all_chat_ids(msg)
+     ^
+SyntaxError: invalid syntax
+  File "binancePump.py", line 172
+    ~#send_to_all_chat_ids(msg)
+     ^
+SyntaxError: invalid syntax
+  File "binancePump.py", line 172
+    ~#send_to_all_chat_ids(msg)
+     ^
+SyntaxError: invalid syntax
+  File "binancePump.py", line 172
+    ~#send_to_all_chat_ids(msg)
+     ^
+SyntaxError: invalid syntax
+  File "binancePump.py", line 172
+    ~#send_to_all_chat_ids(msg)
+     ^
+SyntaxError: invalid syntax
+  File "binancePump.py", line 172
+    ~#send_to_all_chat_ids(msg)
+     ^
+SyntaxError: invalid syntax
+  File "binancePump.py", line 172
+    ~#send_to_all_chat_ids(msg)
+     ^
+SyntaxError: invalid syntax
+  File "binancePump.py", line 172
+    ~#send_to_all_chat_ids(msg)
+     ^
+SyntaxError: invalid syntax
+  File "binancePump.py", line 172
+    ~#send_to_all_chat_ids(msg)
+     ^
+SyntaxError: invalid syntax
+  File "binancePump.py", line 172
+    ~#send_to_all_chat_ids(msg)
+     ^
+SyntaxError: invalid syntax
+  File "binancePump.py", line 172
+    ~#send_to_all_chat_ids(msg)
+     ^
+SyntaxError: invalid syntax
+  File "binancePump.py", line 172
+    ~#send_to_all_chat_ids(msg)
+     ^
+SyntaxError: invalid syntax
+  File "binancePump.py", line 172
+    ~#send_to_all_chat_ids(msg)
+     ^
+SyntaxError: invalid syntax
+  File "binancePump.py", line 172
+    ~#send_to_all_chat_ids(msg)
+     ^
+SyntaxError: invalid syntax
+  File "binancePump.py", line 172
+    ~#send_to_all_chat_ids(msg)
+     ^
+SyntaxError: invalid syntax
+  File "binancePump.py", line 172
+    ~#send_to_all_chat_ids(msg)
+     ^
+SyntaxError: invalid syntax
+  File "binancePump.py", line 172
+    ~#send_to_all_chat_ids(msg)
+     ^
+SyntaxError: invalid syntax
+  File "binancePump.py", line 172
+    ~#send_to_all_chat_ids(msg)
+     ^
+SyntaxError: invalid syntax
+  File "binancePump.py", line 172
+    ~#send_to_all_chat_ids(msg)
+     ^
+SyntaxError: invalid syntax
+  File "binancePump.py", line 172
+    ~#send_to_all_chat_ids(msg)
+     ^
+SyntaxError: invalid syntax
+  File "binancePump.py", line 172
+    ~#send_to_all_chat_ids(msg)
+     ^
+SyntaxError: invalid syntax
+  File "binancePump.py", line 172
+    ~#send_to_all_chat_ids(msg)
+     ^
+SyntaxError: invalid syntax
+  File "binancePump.py", line 172
+    ~#send_to_all_chat_ids(msg)
+     ^
+SyntaxError: invalid syntax
+  File "binancePump.py", line 172
+    ~#send_to_all_chat_ids(msg)
+     ^
+SyntaxError: invalid syntax
+  File "binancePump.py", line 172
+    ~#send_to_all_chat_ids(msg)
+     ^
+SyntaxError: invalid syntax
+  File "binancePump.py", line 172
+    ~#send_to_all_chat_ids(msg)
+     ^
+SyntaxError: invalid syntax
+  File "binancePump.py", line 172
+    ~#send_to_all_chat_ids(msg)
+     ^
+SyntaxError: invalid syntax
+  File "binancePump.py", line 172
+    ~#send_to_all_chat_ids(msg)
+     ^
+SyntaxError: invalid syntax
+  File "binancePump.py", line 172
+    ~#send_to_all_chat_ids(msg)
+     ^
+SyntaxError: invalid syntax
+  File "binancePump.py", line 172
+    ~#send_to_all_chat_ids(msg)
+     ^
+SyntaxError: invalid syntax
+bm socket started
+Press Enter to continue...bm socket started
 Press Enter to continue...
