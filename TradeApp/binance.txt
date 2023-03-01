@@ -1,0 +1,107 @@
+bm socket started
+Press Enter to continue...Unhandled Error
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/twisted/python/log.py", line 96, in callWithLogger
+    return callWithContext({"system": lp}, func, *args, **kw)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/python/log.py", line 80, in callWithContext
+    return context.call({ILogContext: newCtx}, func, *args, **kw)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/python/context.py", line 117, in callWithContext
+    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/python/context.py", line 82, in callWithContext
+    return func(*args, **kw)
+--- <exception caught here> ---
+  File "/usr/local/lib/python3.8/dist-packages/twisted/internet/posixbase.py", line 487, in _doReadOrWrite
+    why = selectable.doRead()
+  File "/usr/local/lib/python3.8/dist-packages/twisted/internet/tcp.py", line 248, in doRead
+    return self._dataReceived(data)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/internet/tcp.py", line 253, in _dataReceived
+    rval = self.protocol.dataReceived(data)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/protocols/tls.py", line 329, in dataReceived
+    self._flushReceiveBIO()
+  File "/usr/local/lib/python3.8/dist-packages/twisted/protocols/tls.py", line 295, in _flushReceiveBIO
+    ProtocolWrapper.dataReceived(self, bytes)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/protocols/policies.py", line 110, in dataReceived
+    self.wrappedProtocol.dataReceived(data)
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/twisted/websocket.py", line 348, in dataReceived
+    self._dataReceived(data)
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 1243, in _dataReceived
+    self.consumeData()
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 1255, in consumeData
+    while self.processData() and self.state != WebSocketProtocol.STATE_CLOSED:
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 1619, in processData
+    fr = self.onFrameEnd()
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 1747, in onFrameEnd
+    self._onMessageEnd()
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/twisted/websocket.py", line 384, in _onMessageEnd
+    self.onMessageEnd()
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 647, in onMessageEnd
+    self._onMessage(payload, self.message_is_binary)
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/twisted/websocket.py", line 387, in _onMessage
+    self.onMessage(payload, isBinary)
+  File "/usr/local/lib/python3.8/dist-packages/binance/websockets.py", line 31, in onMessage
+    self.factory.callback(payload_obj)
+  File "binancePump.py", line 79, in process_message
+    ws.connect('ws://31.220.76.252:8000/ws/_consumers_xcv/')
+  File "/usr/local/lib/python3.8/dist-packages/websocket/_core.py", line 249, in connect
+    self.sock, addrs = connect(url, self.sock_opt, proxy_info(**options),
+  File "/usr/local/lib/python3.8/dist-packages/websocket/_http.py", line 130, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "/usr/local/lib/python3.8/dist-packages/websocket/_http.py", line 205, in _open_socket
+    raise err
+  File "/usr/local/lib/python3.8/dist-packages/websocket/_http.py", line 185, in _open_socket
+    sock.connect(address)
+builtins.ConnectionRefusedError: [Errno 111] Connection refused
+
+Unhandled Error
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/twisted/python/log.py", line 96, in callWithLogger
+    return callWithContext({"system": lp}, func, *args, **kw)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/python/log.py", line 80, in callWithContext
+    return context.call({ILogContext: newCtx}, func, *args, **kw)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/python/context.py", line 117, in callWithContext
+    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/python/context.py", line 82, in callWithContext
+    return func(*args, **kw)
+--- <exception caught here> ---
+  File "/usr/local/lib/python3.8/dist-packages/twisted/internet/posixbase.py", line 487, in _doReadOrWrite
+    why = selectable.doRead()
+  File "/usr/local/lib/python3.8/dist-packages/twisted/internet/tcp.py", line 248, in doRead
+    return self._dataReceived(data)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/internet/tcp.py", line 253, in _dataReceived
+    rval = self.protocol.dataReceived(data)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/protocols/tls.py", line 329, in dataReceived
+    self._flushReceiveBIO()
+  File "/usr/local/lib/python3.8/dist-packages/twisted/protocols/tls.py", line 295, in _flushReceiveBIO
+    ProtocolWrapper.dataReceived(self, bytes)
+  File "/usr/local/lib/python3.8/dist-packages/twisted/protocols/policies.py", line 110, in dataReceived
+    self.wrappedProtocol.dataReceived(data)
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/twisted/websocket.py", line 348, in dataReceived
+    self._dataReceived(data)
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 1243, in _dataReceived
+    self.consumeData()
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 1255, in consumeData
+    while self.processData() and self.state != WebSocketProtocol.STATE_CLOSED:
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 1619, in processData
+    fr = self.onFrameEnd()
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 1747, in onFrameEnd
+    self._onMessageEnd()
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/twisted/websocket.py", line 384, in _onMessageEnd
+    self.onMessageEnd()
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/websocket/protocol.py", line 647, in onMessageEnd
+    self._onMessage(payload, self.message_is_binary)
+  File "/usr/local/lib/python3.8/dist-packages/autobahn/twisted/websocket.py", line 387, in _onMessage
+    self.onMessage(payload, isBinary)
+  File "/usr/local/lib/python3.8/dist-packages/binance/websockets.py", line 31, in onMessage
+    self.factory.callback(payload_obj)
+  File "binancePump.py", line 79, in process_message
+    ws.connect('ws://31.220.76.252:8000/ws/_consumers_xcv/')
+  File "/usr/local/lib/python3.8/dist-packages/websocket/_core.py", line 249, in connect
+    self.sock, addrs = connect(url, self.sock_opt, proxy_info(**options),
+  File "/usr/local/lib/python3.8/dist-packages/websocket/_http.py", line 130, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "/usr/local/lib/python3.8/dist-packages/websocket/_http.py", line 205, in _open_socket
+    raise err
+  File "/usr/local/lib/python3.8/dist-packages/websocket/_http.py", line 185, in _open_socket
+    sock.connect(address)
+builtins.ConnectionRefusedError: [Errno 111] Connection refused
+
