@@ -1,4 +1,178 @@
  
 bm socket started
 Press Enter to continue...bm socket started
-Press Enter to continue...
+Press Enter to continue...bm socket started
+Press Enter to continue...Top Ticks
+Symbol:NULSUSDT	 Time:2023-03-10 20:05:28.988000	 Ticks:[1]	 RPCh:-0.49	 TPCh:0.49	 VCh:0.16	 LP:0.245	 LV:7635187.0	
+
+Top Ticks
+Symbol:ZILUSDT	 Time:2023-03-10 20:05:36.002000	 Ticks:[1]	 RPCh:0.13	 TPCh:0.13	 VCh:0.06	 LP:0.02264	 LV:397941302.1	
+
+Top Ticks
+Symbol:OCEANUSDT	 Time:2023-03-10 20:05:38.002000	 Ticks:[1]	 RPCh:-0.28	 TPCh:0.28	 VCh:0.07	 LP:0.3236	 LV:41712235.0	
+
+Top Ticks
+Symbol:DREPUSDT	 Time:2023-03-10 20:05:40.966000	 Ticks:[1]	 RPCh:0.13	 TPCh:0.13	 VCh:0.09	 LP:0.5465	 LV:14453037.0	
+
+Top Ticks
+Symbol:NULSUSDT	 Time:2023-03-10 20:05:44.001000	 Ticks:[2]	 RPCh:-0.12	 TPCh:0.85	 VCh:0.27	 LP:0.2472	 LV:7677844.0	
+
+Top Ticks
+Symbol:DREPUSDT	 Time:2023-03-10 20:05:50.995000	 Ticks:[2]	 RPCh:0.07	 TPCh:0.18	 VCh:0.22	 LP:0.548	 LV:14500218.0	
+
+Top Ticks
+Symbol:DREPUSDT	 Time:2023-03-10 20:05:52.943000	 Ticks:[3]	 RPCh:-0.04	 TPCh:0.29	 VCh:0.32	 LP:0.5474	 LV:14516551.0	
+
+Top Ticks
+Symbol:DREPUSDT	 Time:2023-03-10 20:05:56.007000	 Ticks:[4]	 RPCh:-0.16	 TPCh:0.42	 VCh:0.40	 LP:0.5463	 LV:14531110.0	
+
+Top Relative Price Change
+Symbol:QNTUSDT	 Time:2023-03-10 20:06:03.007000	 Ticks:[1]	 RPCh:0.35	 TPCh:0.35	 VCh:1.27	 LP:115.0	 LV:76253.327	
+
+Top Total Price Change
+Symbol:NULSUSDT	 Time:2023-03-10 20:06:05.996000	 Ticks:[3]	 RPCh:-0.37	 TPCh:1.10	 VCh:0.42	 LP:0.2462	 LV:7699245.0	
+
+Top Relative Price Change
+Symbol:SYSUSDT	 Time:2023-03-10 20:06:16.941000	 Ticks:[1]	 RPCh:-0.42	 TPCh:0.42	 VCh:0.07	 LP:0.1437	 LV:9028874.0	
+
+Top Ticks
+Symbol:DREPUSDT	 Time:2023-03-10 20:06:19.986000	 Ticks:[5]	 RPCh:-0.47	 TPCh:0.73	 VCh:0.46	 LP:0.551	 LV:14615217.0	
+
+Top Total Price Change
+Symbol:NULSUSDT	 Time:2023-03-10 20:06:20.998000	 Ticks:[4]	 RPCh:-0.49	 TPCh:1.22	 VCh:0.54	 LP:0.2448	 LV:7716819.0	
+
+Top Ticks
+Symbol:DREPUSDT	 Time:2023-03-10 20:06:24.009000	 Ticks:[6]	 RPCh:-0.62	 TPCh:0.87	 VCh:0.53	 LP:0.5492	 LV:14634539.0	
+Top Total Price Change
+Symbol:NULSUSDT	 Time:2023-03-10 20:06:24.009000	 Ticks:[5]	 RPCh:-0.65	 TPCh:1.38	 VCh:0.60	 LP:0.2448	 LV:7720067.0	
+
+Top Total Price Change
+Symbol:NULSUSDT	 Time:2023-03-10 20:06:25.999000	 Ticks:[6]	 RPCh:-0.90	 TPCh:1.63	 VCh:0.67	 LP:0.2448	 LV:7726016.0	
+
+Top Ticks
+Symbol:DREPUSDT	 Time:2023-03-10 20:06:42.007000	 Ticks:[7]	 RPCh:-0.33	 TPCh:1.16	 VCh:0.59	 LP:0.5511	 LV:14652289.0	
+
+Top Total Price Change
+Symbol:NULSUSDT	 Time:2023-03-10 20:06:46.997000	 Ticks:[7]	 RPCh:-0.61	 TPCh:1.91	 VCh:0.76	 LP:0.2471	 LV:7743365.0	
+
+Top Ticks
+Symbol:NULSUSDT	 Time:2023-03-10 20:07:07.016000	 Ticks:[8]	 RPCh:-0.69	 TPCh:1.99	 VCh:0.83	 LP:0.2468	 LV:7764257.0	
+
+Top Ticks
+Symbol:DREPUSDT	 Time:2023-03-10 20:07:12.015000	 Ticks:[8]	 RPCh:-0.38	 TPCh:1.22	 VCh:0.66	 LP:0.5478	 LV:14692212.0	
+
+Top Ticks
+Symbol:NULSUSDT	 Time:2023-03-10 20:07:49.879000	 Ticks:[9]	 RPCh:-0.77	 TPCh:2.07	 VCh:0.88	 LP:0.2459	 LV:7777077.0	
+
+Top Ticks
+Symbol:NULSUSDT	 Time:2023-03-10 20:07:59.023000	 Ticks:[10]	 RPCh:-0.69	 TPCh:2.15	 VCh:1.03	 LP:0.2463	 LV:7791853.0	
+
+Top Relative Price Change
+Symbol:DREPUSDT	 Time:2023-03-10 20:08:16.985000	 Ticks:[9]	 RPCh:-0.69	 TPCh:1.53	 VCh:0.71	 LP:0.5412	 LV:14772431.0	
+
+Top Ticks
+Symbol:DREPUSDT	 Time:2023-03-10 20:08:25.996000	 Ticks:[10]	 RPCh:-0.86	 TPCh:1.70	 VCh:0.81	 LP:0.54	 LV:14800030.0	
+
+Top Ticks
+Symbol:NULSUSDT	 Time:2023-03-10 20:08:27.995000	 Ticks:[11]	 RPCh:-0.85	 TPCh:2.32	 VCh:1.10	 LP:0.2468	 LV:7823356.0	
+
+Top Ticks
+Symbol:NULSUSDT	 Time:2023-03-10 20:08:37.012000	 Ticks:[12]	 RPCh:-1.02	 TPCh:2.48	 VCh:1.16	 LP:0.2458	 LV:7833866.0	
+
+Top Ticks
+Symbol:NULSUSDT	 Time:2023-03-10 20:08:39.013000	 Ticks:[13]	 RPCh:-1.10	 TPCh:2.56	 VCh:1.30	 LP:0.2456	 LV:7846062.0	
+
+Top Ticks
+Symbol:NULSUSDT	 Time:2023-03-10 20:08:43.006000	 Ticks:[14]	 RPCh:-0.65	 TPCh:3.01	 VCh:1.41	 LP:0.2469	 LV:7854768.0	
+Top Relative Price Change
+Symbol:WNXMUSDT	 Time:2023-03-10 20:08:34.957000	 Ticks:[3]	 RPCh:-0.71	 TPCh:0.71	 VCh:0.37	 LP:19.59	 LV:46389.94	
+
+Top Ticks
+Symbol:NULSUSDT	 Time:2023-03-10 20:09:04	 Ticks:[15]	 RPCh:-0.41	 TPCh:3.25	 VCh:1.48	 LP:0.2466	 LV:7892118.0	
+
+Top Ticks
+Symbol:NULSUSDT	 Time:2023-03-10 20:09:08.941000	 Ticks:[16]	 RPCh:-0.57	 TPCh:3.41	 VCh:1.64	 LP:0.2459	 LV:7935472.0	
+
+Top Relative Price Change
+Symbol:DREPUSDT	 Time:2023-03-10 20:09:18.033000	 Ticks:[12]	 RPCh:-0.77	 TPCh:2.05	 VCh:1.16	 LP:0.539	 LV:14914314.0	
+
+Top Relative Price Change
+Symbol:BIFIUSDT	 Time:2023-03-10 20:09:20.028000	 Ticks:[5]	 RPCh:0.85	 TPCh:0.85	 VCh:0.38	 LP:401.6	 LV:2290.105	
+
+Top Relative Price Change
+Symbol:BIFIUSDT	 Time:2023-03-10 20:09:22.903000	 Ticks:[6]	 RPCh:0.93	 TPCh:0.93	 VCh:0.43	 LP:402.0	 LV:2291.447	
+
+Top Ticks
+Symbol:NULSUSDT	 Time:2023-03-10 20:09:29.036000	 Ticks:[17]	 RPCh:-0.65	 TPCh:3.49	 VCh:1.69	 LP:0.2445	 LV:7945840.0	
+
+Top Ticks
+Symbol:NULSUSDT	 Time:2023-03-10 20:09:34.027000	 Ticks:[18]	 RPCh:-0.81	 TPCh:3.66	 VCh:1.76	 LP:0.2437	 LV:7957974.0	
+
+Top Relative Price Change
+Symbol:BIFIUSDT	 Time:2023-03-10 20:09:50.033000	 Ticks:[7]	 RPCh:1.32	 TPCh:1.32	 VCh:0.60	 LP:403.6	 LV:2294.886	
+
+Top Total Volume Change
+Symbol:QNTUSDT	 Time:2023-03-10 20:10:15.040000	 Ticks:[2]	 RPCh:0.78	 TPCh:0.78	 VCh:2.52	 LP:115.8	 LV:77105.769	
+
+Top Relative Price Change
+Symbol:BIFIUSDT	 Time:2023-03-10 20:10:23.891000	 Ticks:[8]	 RPCh:1.23	 TPCh:1.42	 VCh:0.84	 LP:403.8	 LV:2300.301	
+
+Top Ticks
+Symbol:NULSUSDT	 Time:2023-03-10 20:10:24.987000	 Ticks:[19]	 RPCh:-0.73	 TPCh:3.74	 VCh:1.84	 LP:0.242	 LV:8002545.0	
+
+Top Ticks
+Symbol:NULSUSDT	 Time:2023-03-10 20:10:26.036000	 Ticks:[20]	 RPCh:-0.61	 TPCh:3.87	 VCh:1.94	 LP:0.2423	 LV:8011233.0	
+Top Relative Price Change
+Symbol:BIFIUSDT	 Time:2023-03-10 20:10:26.037000	 Ticks:[9]	 RPCh:1.03	 TPCh:1.62	 VCh:0.90	 LP:403.0	 LV:2301.799	
+
+Top Relative Price Change
+Symbol:BIFIUSDT	 Time:2023-03-10 20:10:30.005000	 Ticks:[10]	 RPCh:1.25	 TPCh:1.85	 VCh:0.98	 LP:404.2	 LV:2304.883	
+
+Top Relative Price Change
+Symbol:BIFIUSDT	 Time:2023-03-10 20:10:39.040000	 Ticks:[11]	 RPCh:1.55	 TPCh:2.14	 VCh:1.21	 LP:405.8	 LV:2311.522	
+
+Top Ticks
+Symbol:NULSUSDT	 Time:2023-03-10 20:10:41.030000	 Ticks:[21]	 RPCh:-0.40	 TPCh:4.07	 VCh:2.00	 LP:0.2427	 LV:8029522.0	
+Top Relative Price Change
+Symbol:BIFIUSDT	 Time:2023-03-10 20:10:41.034000	 Ticks:[12]	 RPCh:1.47	 TPCh:2.22	 VCh:1.78	 LP:405.4	 LV:2325.069	
+
+Top Relative Price Change
+Symbol:BIFIUSDT	 Time:2023-03-10 20:10:42.868000	 Ticks:[13]	 RPCh:1.67	 TPCh:2.41	 VCh:1.84	 LP:404.7	 LV:2327.382	
+
+Top Ticks
+Symbol:NULSUSDT	 Time:2023-03-10 20:10:47.031000	 Ticks:[22]	 RPCh:-0.15	 TPCh:4.32	 VCh:2.05	 LP:0.2433	 LV:8033944.0	
+
+Top Relative Price Change
+Symbol:BIFIUSDT	 Time:2023-03-10 20:10:55.021000	 Ticks:[14]	 RPCh:2.04	 TPCh:2.78	 VCh:2.19	 LP:405.8	 LV:2338.971	
+
+Top Relative Price Change
+Symbol:BIFIUSDT	 Time:2023-03-10 20:10:58.550000	 Ticks:[15]	 RPCh:2.19	 TPCh:2.93	 VCh:2.35	 LP:405.8	 LV:2342.977	
+
+Top Relative Price Change
+Symbol:BIFIUSDT	 Time:2023-03-10 20:11:00.021000	 Ticks:[16]	 RPCh:2.31	 TPCh:3.06	 VCh:2.41	 LP:406.3	 LV:2344.257	
+
+Top Relative Price Change
+Symbol:BIFIUSDT	 Time:2023-03-10 20:11:02.752000	 Ticks:[17]	 RPCh:2.44	 TPCh:3.18	 VCh:2.49	 LP:405.7	 LV:2347.026	
+
+Top Relative Price Change
+Symbol:BIFIUSDT	 Time:2023-03-10 20:11:11.992000	 Ticks:[18]	 RPCh:1.97	 TPCh:3.65	 VCh:2.55	 LP:403.8	 LV:2349.754	
+
+Top Relative Price Change
+Symbol:BIFIUSDT	 Time:2023-03-10 20:11:12.977000	 Ticks:[19]	 RPCh:2.46	 TPCh:4.14	 VCh:2.62	 LP:405.8	 LV:2351.225	
+
+Top Relative Price Change
+Symbol:BIFIUSDT	 Time:2023-03-10 20:11:18.940000	 Ticks:[20]	 RPCh:2.59	 TPCh:4.27	 VCh:2.82	 LP:405.8	 LV:2357.568	
+
+Top Ticks
+Symbol:NULSUSDT	 Time:2023-03-10 20:11:26.044000	 Ticks:[23]	 RPCh:0.05	 TPCh:4.52	 VCh:2.12	 LP:0.2452	 LV:8049188.0	
+
+Top Relative Price Change
+Symbol:BIFIUSDT	 Time:2023-03-10 20:11:34.044000	 Ticks:[21]	 RPCh:2.78	 TPCh:4.46	 VCh:2.93	 LP:406.6	 LV:2365.048	
+
+Top Ticks
+Symbol:NULSUSDT	 Time:2023-03-10 20:11:35.035000	 Ticks:[24]	 RPCh:-0.03	 TPCh:4.60	 VCh:2.29	 LP:0.245	 LV:8063618.0	
+
+Top Total Price Change
+Symbol:BIFIUSDT	 Time:2023-03-10 20:11:37.765000	 Ticks:[22]	 RPCh:2.61	 TPCh:4.64	 VCh:3.03	 LP:404.0	 LV:2368.222	
+
+Top Ticks
