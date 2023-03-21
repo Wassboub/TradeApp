@@ -3,7 +3,39 @@
 <head>
 <title>{% block title %}Django Mysql User Authentication - Login, register and Logout {{request.user}}{% endblock %}</title>
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+
+    <link href="https://cdn.datatables.net/1.13.3/css/jquery.dataTables.css">
+    <link href="https://cdn.datatables.net/1.13.3/css/jquery.dataTables.min.css">
+    <link href="https://cdn.datatables.net/searchbuilder/1.4.1/css/searchBuilder.dataTables.min.css">
+    <link href="https://cdn.datatables.net/datetime/1.3.1/css/dataTables.dateTime.min.css">
+    <script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.js"></script>
+    <script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/searchbuilder/1.4.0/js/dataTables.searchBuilder.min.js"></script>
+    <script src="https://cdn.datatables.net/datetime/1.3.1/js/dataTables.dateTime.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.13.4/sorting/datetime-moment.js" charset="utf8"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <meta http-equiv="refresh" content="300">
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
 </head>
  <nav class="navbar navbar-expand-lg " style="background-color: #1f1f1f;">
@@ -49,6 +81,8 @@
             </div>
         </div>
     </nav>
+   <!-- Button trigger modal -->
+</div>
     <div class="container">
         {%block content %}
         {%endblock%}
@@ -58,6 +92,10 @@
 <style>
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+
+
+
 
 html {
     font-size: 12px;
@@ -69,6 +107,40 @@ html {
     font-size: 14px;
   }
 }
+
+/* Target the input search label */
+.dataTables_filter label {
+  /* Apply desired styles */
+  display: inline-block;
+  margin-right: 10px;
+  color: #FFFF99;
+}
+
+.dataTables_filter{
+    margin : 5px;
+  text-align: right;
+}
+/* Target the input search element */
+.dataTables_filter input {
+    display: inline-block;
+    color: black;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 27px;
+}
+
+
 
 .navbar-nav li a {
     color: #FFFF99;
@@ -90,7 +162,7 @@ body {
     height: 100vw;
     font-family: poppins, sans-serif;
     font-size: 0.98rem;
-    overflow: hidden;  /*Hide scrollbars */
+    /* overflow: hidden;  /*Hide scrollbars */
 }
 
 
@@ -100,9 +172,11 @@ body {
     margin-left: auto;
     margin-right: auto;
     overflow-y: auto; /* make the table scrollable if height is more than 200 px  */
-    height: 500px; /* gives an initial height of 200px to the table */
+    overflow-x: auto; /* make the table scrollable if height is more than 200 px  */
+    /*height: 70vh; /* gives an initial height of 200px to the table */
     border-radius: 2rem;
 }
+
 
     .table_main h2 {
         margin-bottom: 0.8rem;
