@@ -4,13 +4,14 @@
   
 {% block content %}
 <h2 class='home_t'>Scalp<h2>
+
      <div
 	class="chat__item__container"
 	id="id_chat_item_container"
 	style="font-size: 20px"
 	>
-  <div class="text-center table_main table-wrapper-scroll-y my-custom-scrollbar">
-   <table >
+  <div class="text-center table-responsive table_main table-wrapper-scroll-y my-custom-scrollbar" >
+<table id="example" class="display nowrap" style="width:100%">
         <thead>
             <tr class="">
                 <th>Symbol</th>
@@ -34,6 +35,7 @@
             
             </td>
             <td class="">{{coin.Time|date:"d/m/Y"}}  {{coin.Time|time:"H:i"}}</td>
+
             <td >{{coin.Ticks}}</td>
             {%if coin.RelativePriceChange < 0 %}
                 <td style="color:#DC3545;">{{coin.RelativePriceChange}}</td>
@@ -56,6 +58,7 @@
 	</div>
 
       <script>
+
       const chatSocket = new WebSocket("ws://" + window.location.host + "/ws/_consumers_xcv/");
       chatSocket.onopen = function (e) {
         console.log("The connection was setup successfully !");
@@ -109,6 +112,7 @@
         }
 
 
+
                 row.appendChild(td0);
                 row.appendChild(td1);
                 row.appendChild(td2);
@@ -117,12 +121,34 @@
                 row.appendChild(td5);
                 row.appendChild(td6);
                 row.appendChild(td7);
-                //table.appendChild(tr);
+
+                $('#example').DataTable().row.add(row);
+                $('#example').DataTable().draw();
+                 
+                  
+
+
 
 
       };
-    </script>
+
+       $(document).ready(function() {
+            $.fn.dataTable.moment( 'D/M/Y H:M' );
+
+               $('#example').DataTable( {
+                    paging: false,
+                    dom: 'Qlfrtip',
+                    
+                    "order": [[ 1, "desc" ]] // Sort by the second column (index 1) in
+
+                  
+                               }         );
+                               document.getElementsByClassName('dtsb-title')[0].style.visibility = 'hidden';
+
+          });
+
+
+        </script>
+
+        
 {% endblock %}
-
-
-
