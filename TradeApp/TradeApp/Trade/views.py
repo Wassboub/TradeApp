@@ -25,7 +25,7 @@ def signup(request):
 
 @login_required(login_url="/signin")
 def home_1_scalp(request): 
-    coinsInfos = CoinInfo.objects.order_by('-Time')[:1000]
+    coinsInfos = CoinInfo.objects.order_by('Time')[:1500]
     return render(request, 'home_1_scalp.html', {"coinsInfo" : coinsInfos})
 
 @login_required(login_url="/signin")
