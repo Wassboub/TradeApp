@@ -111,7 +111,7 @@ def echo_message(message):
        for s in exchange_info['symbols']:
          if(message.upper()==s['symbol']):
              VALUE=message.upper()
-             path = "D:/Perso/Work/Freelance/Django/TradeApp/TradeApp/Trade/data/" + VALUE + ".csv"
+             path = "./data/" + VALUE + ".csv"
              isExist = os.path.exists(path)
              if isExist:
                 X = getcoin(VALUE,path)[1:]
