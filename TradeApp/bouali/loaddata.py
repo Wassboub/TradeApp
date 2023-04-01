@@ -49,7 +49,6 @@ def get_klines_iter(symbol, interval, start, end = None, limit=1000):
             url += '&startTime=' + str(last_time)
 
         url += '&endTime=' + str(end)
-        print (url)
         df2 = pd.read_json(url)
         df2.columns = ['Opentime', 'Open', 'High', 'Low', 'Close', 'Volume', 'Closetime',
                        'Quote asset volume', 'Number of trades', 'Taker by base', 'Taker buy quote', 'Ignore']
