@@ -15,6 +15,12 @@ from binance.client import Client
 import random
 import string
 
+api_key = ""
+api_secret = ""
+client = Client(api_key, api_secret)
+exchange_info = client.get_exchange_info()
+usdtpair=[]
+
 @permission_required('is_superuser')
 @login_required(login_url="/signin")
 def signup(request):
