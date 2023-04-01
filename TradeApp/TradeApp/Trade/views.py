@@ -5,7 +5,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required, permission_required 
 from django.shortcuts import HttpResponseRedirect
-from Trade.forms import LoginForm
+from Trade.forms import LoginForm, CoinForm
 from .models import CoinInfo, CoinInfo_2
 from .model_view import Alert
 import csv
