@@ -24,3 +24,6 @@ class CoinInfo_2(models.Model):
     VolumeChange = models.DecimalField(max_digits=20,decimal_places=5)
     LastPrice = models.DecimalField(max_digits=20,decimal_places=5)
     LastVolume = models.DecimalField(max_digits=20,decimal_places=5)
+
+class Coins(models.Model):
+    symbol = models.CharField(max_length=20)
