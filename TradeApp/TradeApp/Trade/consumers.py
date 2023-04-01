@@ -38,9 +38,9 @@ class ChatConsumer(AsyncWebsocketConsumer):
 		username = text_data_json["username"]
 		print('chat 1')
 		if(username == "binance"):
-			await self.create_coinsInfo(message)
 			#twohours = datetime.now() + timedelta(hours=2)
 			message["t"] = datetime.now().strftime('%d/%m/%Y %H:%M')
+			await self.create_coinsInfo(message)
 			await self.channel_layer.group_send(
 				self.roomGroupName,{
 					"type" : "sendMessage" ,
