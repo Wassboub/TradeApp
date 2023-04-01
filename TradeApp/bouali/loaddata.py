@@ -2,7 +2,7 @@ import csv
 from datetime import datetime
 import pandas as pd
 import pandas as pd
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timezone, timedelta, date
 import calendar
 import os
 import telebot
@@ -15,6 +15,9 @@ api_secret = ""
 client = Client(api_key, api_secret)
 exchange_info = client.get_exchange_info()
 usdtpair=[]
+today = date.today()
+two_months_ago = today - timedelta(days=60)
+one_month_ago = today - timedelta(days=30)
 path1= os.getcwd()
 path2=os.path.join(path1,'data/')
 def get_klines_iter(symbol, interval, start, end = None, limit=1000):
@@ -22,7 +25,6 @@ def get_klines_iter(symbol, interval, start, end = None, limit=1000):
     # We are using utc time zone
 
     # the maximum records is 1000 per each Binance API call
-    print ("--- 1 ---")
     df = pd.DataFrame()
 
     if start is None:
@@ -38,7 +40,6 @@ def get_klines_iter(symbol, interval, start, end = None, limit=1000):
     else:
         end = calendar.timegm(datetime.fromisoformat(end).timetuple()) * 1000
     last_time = None
-    print ("--- 2 ---")
     while len(df) == 0 or (last_time is not None and last_time < end):
         url = 'https://api.binance.com/api/v3/klines?symbol=' + \
               symbol + '&interval=' + interval + '&limit=1000'
@@ -48,10 +49,8 @@ def get_klines_iter(symbol, interval, start, end = None, limit=1000):
             url += '&startTime=' + str(last_time)
 
         url += '&endTime=' + str(end)
-        print ("--- 3 ---")
         print (url)
         df2 = pd.read_json(url)
-        print ("--- 4 ---")
         df2.columns = ['Opentime', 'Open', 'High', 'Low', 'Close', 'Volume', 'Closetime',
                        'Quote asset volume', 'Number of trades', 'Taker by base', 'Taker buy quote', 'Ignore']
         dftmp = pd.DataFrame()
@@ -71,7 +70,6 @@ def get_klines_iter(symbol, interval, start, end = None, limit=1000):
         last_time = (utc_last_time - datetime(1970, 1, 1)) // timedelta(milliseconds=1)
         df = pd.concat([df, dftmp], ignore_index=True, keys=None)
     df.drop_duplicates(subset=None, inplace=True)
-    print ("--- 3 ---")
     df.to_csv(path2+symbol+'.csv', sep='\t', index=False)
 
 data=[]
@@ -80,14 +78,12 @@ for S in exchange_info['symbols']:
     try:
         path = path2 + S["symbol"] + ".csv"
         isExist = os.path.exists(path)
-        if isExist == True:
-           print("nemi")
         if isExist == False:
            print(S["symbol"])
-           get_klines_iter(S["symbol"],'5m', '2022-12-07', '2023-01-13')
+           get_klines_iter(S["symbol"],'5m', two_months_ago.isoformat(), one_months_ago.isoformat())
     except:
         data.append(S["symbol"])
-        print("this coin dont loaded prblm check it plaease ")
+        print("this coin dont loaded prblm check it please")
         pass
 
 print(data)
