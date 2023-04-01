@@ -9,7 +9,7 @@ import telebot
 import calendar
 import os
 from binance.client import Client
-#VALUE=input("please give ur coin:\n")
+#VALUE=input("please give ur coin:\n")     
 api_key = ""
 api_secret = ""
 client = Client(api_key, api_secret)
@@ -72,7 +72,19 @@ def get_klines_iter(symbol, interval, start, end = None, limit=1000):
     df.drop_duplicates(subset=None, inplace=True)
     df.to_csv(path2+symbol+'.csv', sep='\t', index=False)
 
+def emptyfolder():
+    folder_path = "/root/TradeApp/TradeApp/bouali/data"
+    for file_name in os.listdir(folder_path):
+        file_path = os.path.join(folder_path, file_name)
+        try:
+            if os.path.isfile(file_path):
+                os.unlink(file_path)
+                print(f"Deleted {file_path}")
+        except Exception as e:
+            print(f"Error deleting {file_path}: {e}")    
 data=[]
+emptyfolder()
+
 for S in exchange_info['symbols']:
    if "USDT" in S["symbol"]:
     try:
