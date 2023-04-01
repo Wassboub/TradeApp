@@ -3,7 +3,12 @@
 {% block title %}TradeApp-History{% endblock %}
   
 {% block content %}
-<h2 class='home_t'> History<h2>
+ <div class="modal-body">
+         <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit" class=" btn btn-primary">Search</button>
+<h2 class='home_t'> History of <span style='color:blue;'>{{Symbol}}</span> since <span style=''>{{date|date:"d/m/Y"}}</span><h2>
      <div
 	class="chat__item__container"
 	id="id_chat_item_container"
@@ -13,37 +18,25 @@
    <table >
         <thead>
             <tr class="">
-                <th>Symbol</th>
-                <th>Time</th>
-                <th>Ticks</th>
-                <th>RPCh</th>
-                <th>TPCh</th>
-                <th>VCh</th>
-                <th>LP</th>
-                <th>LV</th>
-
+                <th>Alert</th>
+                <th>⏳Time</th>
+                <th>〽️Price</th>
+                <th>Volume Change</th>
             </tr>
         </thead>
-        <tbody id="coinsTable2">
-        {% for coin in coinsInfo %}
+        <tbody id="coinsTable4">
+        {% for alert in alerts %}
           <tr>
-            <td class="Symbol">{{coin.symbol}}
-            <div class="glow"></div>
-            <div class="flame"></div>
-
-            
-            </td>
-            <td class="">{{coin.Time|date:"d/m/Y"}}  {{coin.Time|time:"H:i"}}</td>
-            <td >{{coin.Ticks}}</td>
-            {%if coin.RelativePriceChange < 0 %}
-                <td style="color:#DC3545;">{{coin.RelativePriceChange}}</td>
+            <td>{{alert.Numero}}</td>
+            <td class="">{{alert.Time|date:"d/m/Y"}}  {{alert.Time|time:"H:i"}}</td>
+            {%if alert.Up %}
+                <td style="color:#198754;">{{alert.Price}}</td>
             {%else%}
-                <td style="color:#198754;">{{coin.RelativePriceChange}}</td>
+                <td style="color:#DC3545;">{{alert.Price}}</td>
             {%endif%}
-            <td>{{coin.TotalPriceChange}}</td>
-            <td>{{coin.VolumeChange}}</td>
-            <td>{{coin.LastPrice}}</td>
-            <td>{{coin.LastVolume}}</td>
+            <td class="">{{alert.Emoji}} {{alert.VolumeChange}}</td>
+
+
           </tr>
         {%endfor%}
         </tbody>
@@ -67,7 +60,7 @@
      
       chatSocket.onmessage = function (e) {
         const data = JSON.parse(e.data);
-        var table = document.getElementById("coinsTable2");
+        var table = document.getElementById("coinsTable4");
         var tr = document.createElement("tr");
         var td0 = document.createElement("td");
         td0.appendChild(document.createTextNode(data.message.s));
@@ -124,6 +117,3 @@
       };
     </script>
 {% endblock %}
-
-
-
