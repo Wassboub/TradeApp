@@ -117,7 +117,7 @@ def echo_message(message):
        for s in exchange_info['symbols']:
          if(message.upper()==s['symbol']):
              VALUE=message.upper()
-             path = "./data/" + VALUE + ".csv"
+             path = "/root/TradeApp/TradeApp/bouali/data/" + VALUE + ".csv"
              isExist = os.path.exists(path)
              if isExist:
                 X = getcoin(VALUE,path)[1:]
