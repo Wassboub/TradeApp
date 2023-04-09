@@ -91,7 +91,7 @@ for S in exchange_info['symbols']:
         isExist = os.path.exists(path)
         if isExist == False:
            print(S["symbol"])
-           get_klines_iter(S["symbol"],'5m', two_months_ago.isoformat(), one_month_ago.isoformat())
+           get_klines_iter(S["symbol"],'5m', one_month_ago.isoformat(), today.isoformat())
     except:
         data.append(S["symbol"])
         print("this coin dont loaded prblm check it please")
