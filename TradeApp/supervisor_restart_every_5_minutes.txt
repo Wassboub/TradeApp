@@ -1,4 +1,0 @@
-python3: ERROR (no such process)
-binanncePump.py: ERROR (no such process)
-python3: ERROR (no such process)
-binanncePump.py: ERROR (no such process)
