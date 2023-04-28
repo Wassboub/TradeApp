@@ -125,7 +125,7 @@ def main():
                 console_color = 'red'
 
             if (not price_change.isPrinted
-                and abs(price_change.price_change_perc) > min_perc and abs(price_change.price_change_perc) < 0.5
+                and abs(price_change.price_change_perc) > min_perc and abs(price_change.price_change_perc) < 0.07
                     and price_change.volume_change_perc > 0.05):
 
                 price_change.isPrinted = True
