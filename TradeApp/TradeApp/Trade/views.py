@@ -14,6 +14,10 @@ import os
 from binance.client import Client
 import random
 import string
+import pandas as pd
+from binance.client import Client
+from datetime import datetime, timedelta
+from requests.exceptions import ReadTimeout
 
 api_key = ""
 api_secret = ""
@@ -108,93 +112,72 @@ def getcoin(coin,path):
     return y
 
 def echo_message(message):
-       my_list_alerts = []
-       list_alerts = []
-       #print("echo")
-       x=0
-       #chatid=message.chat.id
-       msg=""
-       for s in exchange_info['symbols']:
-         if(message.upper()==s['symbol']):
-             VALUE=message.upper()
-             path = "/root/TradeApp/TradeApp/bouali/data/" + VALUE + ".csv"
-             isExist = os.path.exists(path)
-             if isExist:
-                X = getcoin(VALUE,path)[1:]
-                volume24h = []
-                k = 288
-                ycolne = []
-                xclone = []
-                for i in range(288, len(X) - 1):
-                    volume = 0
-                    for j in range(i - k, i - 1):
-                        volume = volume + float(X[j][6])
+    binance_data = BinanceData()
+    # Fetch data for BTC/USDT pair
+    df = binance_data.fetch_data(message)
+class BinanceData:
+    def __init__(self):
+        self.client = Client("", "")
+        self.directory = 'binance_data'
+        self.interval = Client.KLINE_INTERVAL_5MINUTE
+        self.start_ts = int(datetime.timestamp(datetime.now() - timedelta(days=45)))
+        self.end_ts = int(datetime.timestamp(datetime.now()))
 
-                    volume24h.append(volume)
-                alert=[]
-                num=0
-                yy=[]
-                sum1 = 0
-                sum2 = 0
-                for i in range(288, len(X) - 1):
-                    y = float(X[i][6]) / float(volume24h[i - 288])
-                    z = ((float(X[i][2]) - float(X[i][4])) / float(X[i][2])) * 100
+    def fetch_data(self, symbol):
+        try:
+            # Fetch historical klines for the given symbol
+            klines = self.client.get_historical_klines(symbol, self.interval, self.start_ts * 1000, self.end_ts * 1000)
+        except ReadTimeout as e:
+            raise Exception(f'Request timed out for {symbol}. Skipping...') from e
 
-                    if (z >= 0):
-                        sum1 = sum1 + y
-                    else:
-                        #print(z, "ddddddddd", y)
-                        sum2 = sum2 - y
-                    if (y > 0.05):
-                        alert.append(num + 1)
-                        num=num+1
-                        xclone.append(X[i][0] + " " + X[i][1])
+        # Convert klines to pandas dataframe
+        df = pd.DataFrame(klines, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume', 'close_time',
+                                           'quote_asset_volume', 'number_of_trades', 'taker_buy_base_asset_volume',
+                                           'taker_buy_quote_asset_volume', 'ignore'])
 
+        # Convert timestamp to datetime format
+        df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms')
 
+        # Set timestamp as index
+        df.set_index('timestamp', inplace=True)
 
-                        if z >= 0:
-                            if(y>=0.15):
-                                msg = "" + ("⏳"+str(X[i][0]) + "___" + str(X[i][1]) +"\n"+"📣"+ "alert:"+str(alert[num-1])+"    "+"\N{eyes}"+"\n"+"〽️"+"price:  "  +"+"+ str('%.3f' % z) + "%"+"\n" +"🚨"+ "volume_change:"   +str('%.3f' % (y*100))) +"%"+"🔥"+ "\n"+"********"+"\n"
-                                up = True
-                                emoji = "🔥"
-                            else:
-                                msg = "" + ("⏳"+str(X[i][0]) + "___" + str(X[i][1]) + "\n" +"📣"+ "alert:" + str(alert[num - 1]) + "    " + "\N{eyes}" + "\n" + "〽️" +"price:  " + "+" + str('%.3f' % z) + "%" + "\n" +"🚨"+ "volume_change:" + str('%.3f' % (y * 100))) + "%" + "⚡️" + "\n" + "********" + "\n"
-                                up = True
-                                emoji = "⚡️"
-                            ycolne.append(y)
-                        else:
-                                msg = "" + ("⏳"+str(X[i][0]) + "___" + str(X[i][1]) +"alert"+str(alert[num-1])+"  "+"\N{eyes}"+"\n"+ "\n" + "price:  " + ":" + "-" + str('%.3f' % z) + "%" + "\n" +"🚨" +"volume_change:" + str('%.3f' % (y*100))) +"%"+ "🩸🩸" +"\n" + "********" + "\n"
-                                up = False
-                                emoji = "🩸🩸"
-                                ycolne.append(-y)
-                        my_list_alerts.append(msg)
-                        time = datetime.strptime(str(X[i][0]) + " " + str(X[i][1]),  '%d/%m/%Y %H:%M:%S')
-                        list_alerts.append( Alert(time , alert[num-1] , str('%.3f' % z) , str('%.3f' % (y*100)) ,up, emoji ) )
-                        #print(time)
+        # Resample to 5-minute intervals
+        df = df.resample('5T').agg({'open': 'first', 'high': 'max', 'low': 'min', 'close': 'last',
+                                    'volume': 'sum', 'quote_asset_volume': 'sum', 'number_of_trades': 'sum',
+                                    'taker_buy_base_asset_volume': 'sum', 'taker_buy_quote_asset_volume': 'sum'})
 
-                #print(message)
-                #print(msg)
+        # Calculate 24-hour volume for each candle
+        df['24h_volume'] = df['volume'].rolling(window=288).sum()
 
-                volume12h = []
-                k = 144
-                for i in range(144, len(X) - 1):
-                    volume = 00
-                    for j in range(i - k, i - 1):
-                        volume = volume + float(X[j][6])
+        # Calculate volume ratio for each candle starting from 289th row
+        df['volume_ratio'] = 0.0
+        df['sell_buy_ratio'] = 0.0
+        df['order_type'] = ''
+        for i in range(288, len(df)):
+            volume = pd.to_numeric(df.iloc[i]['volume'])
+            volume_24h = pd.to_numeric(df.iloc[i]['24h_volume'])
+            print(volume ,"  ",volume_24h,"  ")
+            if volume_24h > 0:
+                volume_ratio = volume / volume_24h
+                df.at[df.index[i], 'volume_ratio'] = volume_ratio
 
-                    volume12h.append(volume)
+                # Calculate sell/buy ratio for each candle
+                taker_buy_base_asset_volume = pd.to_numeric(df.iloc[i]['taker_buy_base_asset_volume'])
+                taker_sell_base_asset_volume = pd.to_numeric(df.iloc[i]['volume']) - taker_buy_base_asset_volume
+                if pd.isna(taker_sell_base_asset_volume):
+                    taker_sell_base_asset_volume = 0
+                order_type = 'buy' if taker_buy_base_asset_volume > taker_sell_base_asset_volume else 'sell'
+                if volume > 0:
+                    sell_buy_ratio = abs(taker_sell_base_asset_volume - taker_buy_base_asset_volume) / volume
+                else:
+                    sell_buy_ratio = 0
 
-                for i in range(144, len(X) - 1):
-                    y = float(X[i][6]) / float(volume12h[i - 288])
+                df.at[df.index[i], 'sell_buy_ratio'] = sell_buy_ratio
+                df.at[df.index[i], 'order_type'] = order_type
 
-                    if (y > 0.050):
-                        volume12h[i - 288] = 0
+        # Filter for rows where volume ratio is greater than 0.02
+        df_filtered = df[pd.to_numeric(df['volume_ratio']) > 0.06]
 
-
-
-                x=1
-                break
-        #if x==0:
-            #print(message)
-        #return my_list_alerts
-       return list_alerts
+        # Select relevant columns and rename them
+        df_filtered = df_filtered[['volume', 'volume_ratio', 'sell_buy_ratio', 'order_type']]
+        return df_filtered

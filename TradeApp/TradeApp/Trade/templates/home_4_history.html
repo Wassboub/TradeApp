@@ -27,14 +27,8 @@
         <tbody id="coinsTable4">
         {% for alert in alerts %}
           <tr>
-            <td>{{alert.Numero}}</td>
-            <td class="">{{alert.Time|date:"d/m/Y"}}  {{alert.Time|time:"H:i"}}</td>
-            {%if alert.Up %}
-                <td style="color:#198754;">{{alert.Price}}</td>
-            {%else%}
-                <td style="color:#DC3545;">{{alert.Price}}</td>
-            {%endif%}
-            <td class="">{{alert.Emoji}} {{alert.VolumeChange}}</td>
+            <td class="">{{alert.timestamp|date:"d/m/Y"}}  {{alert.timestamp|time:"H:i"}}</td>
+
 
 
           </tr>
