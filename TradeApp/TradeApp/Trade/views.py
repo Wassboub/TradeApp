@@ -18,7 +18,6 @@ import pandas as pd
 from binance.client import Client
 from datetime import datetime, timedelta
 from requests.exceptions import ReadTimeout
-
 api_key = ""
 api_secret = ""
 client = Client(api_key, api_secret)
@@ -57,18 +56,25 @@ def home_3_btc(request):
 @login_required(login_url="/signin")
 def home_4_history(request):
      if request.method == 'POST':
+        
         form = CoinForm(request.POST)
         if request.POST['Coin'] != "":
             symbol = request.POST['Coin']
-            alerts = echo_message(symbol)
+            alerts = getConformeData(echo_message(symbol))
+            print("-*-*-*-*--*-*-*-*-*-*-*-*")
+            print("*************************")
+            plot_dt = plot_data(alerts)
+            print("-------------------------")
+            plot_lb = plot_date(alerts)
             date = datetime.strptime('08/12/2022 18:35',  '%d/%m/%Y %H:%M')
-            return render(request, 'home_4_history.html', {"alerts" : alerts , "Symbol": symbol , "date": date,'form': form})
+            return render(request, 'home_4_history.html', {"plot_date": plot_lb ,"plot_data": plot_dt ,"alerts" : alerts , "Symbol": symbol , "date": date,'form': form})
         else:
             return render(request, 'home_4_history.html', {'form': form, 'notif':'Coin not exist'})
      else:
         form = CoinForm(request.POST)
         symbol = "---"
         return render(request, 'home_4_history.html', {'form': form, "Symbol": symbol})
+     
    
    
   
@@ -115,12 +121,14 @@ def echo_message(message):
     binance_data = BinanceData()
     # Fetch data for BTC/USDT pair
     df = binance_data.fetch_data(message)
+    return df
+
 class BinanceData:
     def __init__(self):
         self.client = Client("", "")
         self.directory = 'binance_data'
         self.interval = Client.KLINE_INTERVAL_5MINUTE
-        self.start_ts = int(datetime.timestamp(datetime.now() - timedelta(days=45)))
+        self.start_ts = int(datetime.timestamp(datetime.now() - timedelta(days=5)))
         self.end_ts = int(datetime.timestamp(datetime.now()))
 
     def fetch_data(self, symbol):
@@ -156,7 +164,6 @@ class BinanceData:
         for i in range(288, len(df)):
             volume = pd.to_numeric(df.iloc[i]['volume'])
             volume_24h = pd.to_numeric(df.iloc[i]['24h_volume'])
-            print(volume ,"  ",volume_24h,"  ")
             if volume_24h > 0:
                 volume_ratio = volume / volume_24h
                 df.at[df.index[i], 'volume_ratio'] = volume_ratio
@@ -177,7 +184,47 @@ class BinanceData:
 
         # Filter for rows where volume ratio is greater than 0.02
         df_filtered = df[pd.to_numeric(df['volume_ratio']) > 0.06]
+        date_list = []
+        date_list.append("DATE")
+
+        for index, row in df_filtered.iterrows():
+            date = index.strftime("%Y-%m-%d %H:%M ")
+            date_list.append(date)
+
+        print(date_list)
 
         # Select relevant columns and rename them
         df_filtered = df_filtered[['volume', 'volume_ratio', 'sell_buy_ratio', 'order_type']]
-        return df_filtered
+
+        df_filtered2 = [list(df_filtered.columns)] + df_filtered.values.tolist()
+        df_filtered2 = [[date] + row for date, row in zip(date_list, df_filtered2)]
+        print(df_filtered2)
+        return df_filtered2
+
+def getConformeData(tab):
+    list = []
+    for i in range(len(tab)):
+        if i==0:
+            continue
+        list.append( Alert(i,tab[i][0],tab[i][1],tab[i][2],tab[i][3],tab[i][4]))
+    return list
+def plot_data(tab):
+    my_plots = []
+    for item in tab :
+        print("item in tab")
+        print(item.Time)
+        print(item.Numero)
+        print(item.Price)
+        print(item.VolumeChange)
+        print(item.Up)
+        print(item.Emoji)
+        my_plots.append(item.VolumeChange)
+    print(my_plots)
+    return my_plots
+
+def plot_date(tab):
+    my_plots = []
+    for item in tab :
+        my_plots.append(item.Numero)
+    print(my_plots)
+    return my_plots
