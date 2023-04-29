@@ -214,7 +214,7 @@ def plot_data(tab):
         if item.Emoji =="sell":
             my_plots.append(-1 * item.VolumeChange/100)
         else:
-            my_plots.append(-1 * item.VolumeChange/100)
+            my_plots.append(item.VolumeChange/100)
     return my_plots
 
 def plot_date(tab):
