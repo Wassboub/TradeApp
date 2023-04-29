@@ -65,9 +65,10 @@ def home_4_history(request):
             print("*************************")
             plot_dt = plot_data(alerts)
             print("-------------------------")
+            X= plot_date2(alerts)
             plot_lb = plot_date(alerts)
             date = datetime.strptime('08/12/2022 18:35',  '%d/%m/%Y %H:%M')
-            return render(request, 'home_4_history.html', {"plot_date": plot_lb ,"plot_data": plot_dt ,"alerts" : alerts , "Symbol": symbol , "date": date,'form': form})
+            return render(request, 'home_4_history.html', {"plot_date": plot_lb ,"plot_data": plot_dt,"plot_data2": X ,"alerts" : alerts , "Symbol": symbol , "date": date,'form': form})
         else:
             return render(request, 'home_4_history.html', {'form': form, 'notif':'Coin not exist'})
      else:
@@ -218,7 +219,10 @@ def plot_data(tab):
         print(item.VolumeChange)
         print(item.Up)
         print(item.Emoji)
-        my_plots.append(item.VolumeChange)
+        if item.Emoji =="sell":
+         my_plots.append(-1 * item.VolumeChange/100)
+        else:
+         my_plots.append(-1 * item.VolumeChange/100)
     print(my_plots)
     return my_plots
 
@@ -226,5 +230,11 @@ def plot_date(tab):
     my_plots = []
     for item in tab :
         my_plots.append(item.Numero)
+    print(my_plots)
+    return my_plots
+def plot_date2(tab):
+    my_plots = []
+    for item in tab :
+        my_plots.append(item.Up)
     print(my_plots)
     return my_plots

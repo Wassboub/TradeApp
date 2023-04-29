@@ -133,40 +133,49 @@ History of <span style='color:blue;'>{{Symbol}}
    
    
    };
-   var ctx = document.getElementById('myChart').getContext('2d');
-   var myChart = new Chart(ctx, {
-   type: 'line',
-   data: {
-     labels: {{ plot_date|safe }},
-          datasets: [{
-         label: 'Volme Change / DateTime',
-         data: {{ plot_data|safe }},
-         fill: false,
-         borderColor: 'rgba(255, 99, 132, 1)',
-         borderWidth: 1
-     }]
-   },
-   options: {
-     scales: {
-         xAxes: [{
-             type: 'time',
-             time: {
-                 unit: 'day',
-                 displayFormats: {
-                     day: 'MM/DD/YYYY'
-                 }
-             }
-         }],
-         yAxes: [{
-             ticks: {
-                 beginAtZero: true
-             }
-         }]
-     }
-   }
-   });
-   
-   
-   
+var ctx = document.getElementById('myChart').getContext('2d');
+
+var myChart = new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: {{ plot_date|safe }},
+    datasets: [{
+      label: 'Volume Change / DateTime',
+      data: {{ plot_data|safe }},
+      fill: true,
+      borderColor: 'rgba(255, 99, 132, 1)',
+      borderWidth: 1,
+      backgroundColor: {{ plot_data|safe }}.map(function(data_point) {
+        return data_point > 0 ? 'rgba(75, 192, 192, 0.2)' : 'rgba(255, 99, 132, 0.2)';
+      })
+    },
+    {
+      label: 'New Data',
+      data: {{ plot_data2|safe }},
+      type: 'bar',
+      backgroundColor: 'rgba(54, 162, 235, 0.2)',
+      borderColor: 'rgba(54, 162, 235, 1)',
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      xAxes: [{
+        type: 'time',
+        time: {
+          unit: 'day',
+          displayFormats: {
+            day: 'MM/DD/YYYY'
+          }
+        }
+      }],
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
+      }]
+    }
+  }
+});
 </script>
 {% endblock %}
