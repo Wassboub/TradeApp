@@ -128,7 +128,7 @@ class BinanceData:
         self.client = Client("", "")
         self.directory = 'binance_data'
         self.interval = Client.KLINE_INTERVAL_5MINUTE
-        self.start_ts = int(datetime.timestamp(datetime.now() - timedelta(days=5)))
+        self.start_ts = int(datetime.timestamp(datetime.now() - timedelta(days=30)))
         self.end_ts = int(datetime.timestamp(datetime.now()))
 
     def fetch_data(self, symbol):
@@ -211,20 +211,14 @@ def getConformeData(tab):
 def plot_data(tab):
     my_plots = []
     for item in tab :
-        print("item in tab")
-        print(item.Time)
-        print(item.Numero)
-        print(item.Price)
-        print(item.VolumeChange)
-        print(item.Up)
-        print(item.Emoji)
-        my_plots.append(item.VolumeChange)
-    print(my_plots)
+        if item.Emoji =="sell":
+            my_plots.append(-1 * item.VolumeChange/100)
+        else:
+            my_plots.append(-1 * item.VolumeChange/100)
     return my_plots
 
 def plot_date(tab):
     my_plots = []
     for item in tab :
         my_plots.append(item.Numero)
-    print(my_plots)
     return my_plots
