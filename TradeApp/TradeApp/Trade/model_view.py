@@ -17,7 +17,7 @@ class Alert():
         self.Time = Time
         self.Numero = Numero
         self.Price = Price
-        self.VolumeChange = VolumeChange
+        self.VolumeChange = VolumeChange*100
         self.Up = Up
         self.Emoji = Emoji
 
