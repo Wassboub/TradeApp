@@ -38,7 +38,8 @@ while True:
         trades = client.get_recent_trades(symbol='BTCUSDT', limit=800)
         # Calculate the total volume of executed large trades for buy and sell
         for trade in trades:
-            x=trade['id']
+
+            print(trade)
             if float(trade['qty']) > 0.01 and trade['id'] not in processed_trade_ids2:  # Trade volume threshold is set to 1 BTC and check if the trade has been processed before
                 processed_trade_ids2.add(trade['id'])
 
