@@ -115,19 +115,16 @@ while True:
         net_3d_emoji = "🟢" if net_volume_3d > 0 else "🔴"
         if (current_time - last_reset_time1h).total_seconds() >= 60 * 60:
             # Reset the variable to 0 and update the last reset time
+            last_reset_time1h = current_time
             message = f"{net_15m_emoji} last 15 min Netvolume: `{net_volume_15m:.2f}` BTC*\n{net_1h_emoji} last 1 h Netvolume: `{net_volume_1h:.2f}` BTC*\n{net_4h_emoji} last 4 h Netvolume: `{net_volume_4h:.2f}` BTC*\n{net_1d_emoji} last 1 d Netvolume: `{net_volume_1d:.2f}` BTC*\n{net_3d_emoji} last 3d Netvolume: `{net_volume_3d:.2f}` BTC*"
             requests.post(f"https://api.telegram.org/bot{bot_token}/sendMessage",
                           data={"chat_id": chat_id, "text": message})
+            net_volume_1h=0
         if (current_time - last_reset_time4h).total_seconds() >= 4 * 60 * 60:
             # Reset the variable to 0 and update the last reset time
             net_volume_4h = 0
             last_reset_time4h = current_time
 
-
-
-
-            net_volume_1h = 0
-            last_reset_time1h = current_time
 
         if (current_time - last_reset_time15m).total_seconds() >= 15 * 60:
             # Reset the variable to 0 and update the last reset time
